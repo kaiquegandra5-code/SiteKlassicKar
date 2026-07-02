@@ -7,7 +7,7 @@ import {
   WHATSAPP_DISPLAY,
 } from '../data/contact'
 
-const ICONS = { instagram: Instagram, facebook: Facebook, youtube: Youtube }
+const ICONS = { instagram: Instagram}
 
 const NAV = [
   {

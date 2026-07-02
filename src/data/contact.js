@@ -13,7 +13,7 @@ export const WHATSAPP_MSG_PACKAGE = encodeURIComponent(
   'Olá Klassic Kar! Quero assinar um pacote.'
 )
 export const WHATSAPP_MSG_SINGLE = encodeURIComponent(
-  'Olá Klassic Kar! Quero agendar um serviço avulso.'
+  'Olá Klassic Kar! Quero agendar um serviço.'
 )
 
 export const whatsappLink = (msg = WHATSAPP_MSG_GENERAL) =>
@@ -24,12 +24,12 @@ export const INSTAGRAM_HANDLE = '@klassickar.estetica'
 export const INSTAGRAM_URL = 'https://instagram.com/klassickar.estetica'
 
 // Endereço
-export const ADDRESS = 'Av. Premium, 1234 — São Paulo / SP'
+export const ADDRESS = 'R. Mário Linhares, 561 - Jardim Inga, São Paulo - SP, 05736-160'
 export const EMAIL = 'contato@klassickar.com.br'
 
 // Social links (para o Footer)
 export const SOCIAL_LINKS = [
   { icon: 'instagram', label: 'Instagram', href: INSTAGRAM_URL },
-  { icon: 'facebook',  label: 'Facebook',  href: 'https://facebook.com/klassickar' },
-  { icon: 'youtube',   label: 'YouTube',   href: 'https://youtube.com/@klassickar' },
+  { icon: 'facebook',  label: 'Facebook',  href: 'https://facebook.com/klassickar.estetica' },
+  { icon: 'youtube',   label: 'YouTube',   href: 'https://youtube.com/@klassickar.estetica' },
 ]
