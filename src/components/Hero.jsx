@@ -37,7 +37,7 @@ export default function Hero() {
           </div>
 
           <h1 className="mt-6 font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight animate-fade-up">
-            <span className="text-white">Todo carro novo</span>{' '}
+            <span className="text-white">TESTE</span>{' '}
             <span className="text-white">um dia vira</span>{' '}
             <span className="text-gradient">Klassic.</span>
           </h1>
