@@ -38,7 +38,7 @@ export default function Hero() {
           <h1 className="mt-6 font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight animate-fade-up">
             <span className="text-white">Todo carro novo,</span>{' '}
             <span className="text-white">um dia vira</span>{' '}
-            <span className="text-gradient">Clássico.</span>
+            <span className="text-gradient">clássico.</span>
           </h1>
 
           <p className="mt-6 mx-auto max-w-2xl text-base sm:text-lg text-zinc-300 animate-fade-up">
