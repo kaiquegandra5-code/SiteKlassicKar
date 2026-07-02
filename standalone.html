@@ -1,0 +1,815 @@
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0B0B0C" />
+    <meta name="description" content="Klassic Kar — Estética automotiva premium: detalhamento, vitrificação cerâmica, lavagem técnica e higienização interna." />
+    <meta property="og:title" content="Klassic Kar · Estética Automotiva Premium" />
+    <meta property="og:description" content="Detalhamento, vitrificação e lavagem técnica de alto padrão. Agende agora." />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <title>Klassic Kar · Estética Automotiva Premium</title>
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: { DEFAULT:'#0B0B0C', 50:'#1A1A1D', 100:'#141417', 200:'#101013', 300:'#0B0B0C', 400:'#08080A' },
+              neon: { purple:'#B964FF', violet:'#8B5CF6', lime:'#BEF264', green:'#84CC16' },
+            },
+            fontFamily: { sans:['Inter','system-ui','sans-serif'], display:['"Space Grotesk"','Inter','sans-serif'] },
+            backgroundImage: {
+              'gradient-brand': 'linear-gradient(135deg, #B964FF 0%, #84CC16 100%)',
+              'gradient-brand-soft': 'linear-gradient(135deg, rgba(185,100,255,0.18) 0%, rgba(132,204,22,0.12) 100%)',
+            },
+            boxShadow: {
+              'glow-purple': '0 0 24px rgba(185, 100, 255, 0.45)',
+              'glow-lime':   '0 0 24px rgba(132, 204, 22, 0.45)',
+              'glow-mix':    '0 0 32px rgba(185, 100, 255, 0.35), 0 0 32px rgba(132, 204, 22, 0.25)',
+              'card':        '0 8px 32px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255,255,255,0.04)',
+            },
+            keyframes: {
+              'fade-up': { '0%':{opacity:'0',transform:'translateY(16px)'}, '100%':{opacity:'1',transform:'translateY(0)'} },
+              'pulse-glow': {
+                '0%,100%':{boxShadow:'0 0 18px rgba(185,100,255,0.35), 0 0 32px rgba(132,204,22,0.2)'},
+                '50%':    {boxShadow:'0 0 28px rgba(185,100,255,0.55), 0 0 48px rgba(132,204,22,0.35)'},
+              },
+            },
+            animation: {
+              'fade-up': 'fade-up 0.7s ease-out both',
+              'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
+            },
+          },
+        },
+      };
+    </script>
+
+    <script crossorigin src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.25.7/babel.min.js"></script>
+    <!-- Pinned to v0.469.0 (last version with UMD build + brand icons: Instagram, Facebook, YouTube) -->
+    <script src="https://unpkg.com/lucide@0.469.0"></script>
+
+    <style>
+      html { -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; scroll-behavior:smooth; }
+      body { font-family:'Inter',system-ui,sans-serif; color:#f4f4f5; background-color:#0B0B0C;
+        background-image: radial-gradient(1200px 600px at 80% -10%, rgba(185,100,255,.12), transparent 60%),
+                          radial-gradient(900px 500px at -10% 30%, rgba(132,204,22,.08), transparent 60%),
+                          radial-gradient(700px 400px at 50% 110%, rgba(185,100,255,.10), transparent 60%);
+        background-attachment:fixed; }
+      ::selection { background:rgba(185,100,255,.4); color:#fff; }
+      ::-webkit-scrollbar { width:10px; height:10px; }
+      ::-webkit-scrollbar-track { background:#0B0B0C; }
+      ::-webkit-scrollbar-thumb { background:linear-gradient(180deg,#8B5CF6,#84CC16); border-radius:999px; border:2px solid #0B0B0C; }
+      .text-gradient { background:linear-gradient(135deg,#B964FF 0%,#84CC16 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+      .font-display { font-family:'Space Grotesk','Inter',sans-serif; }
+      .btn-primary {
+        position:relative; display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+        border-radius:9999px; padding:.75rem 1.5rem; font-weight:600; color:#0B0B0C;
+        background:linear-gradient(135deg,#B964FF 0%,#84CC16 100%);
+        box-shadow:0 0 32px rgba(185,100,255,.35),0 0 32px rgba(132,204,22,.25);
+        transition:all .3s;
+      }
+      .btn-primary:hover { transform:scale(1.03); box-shadow:0 0 40px rgba(185,100,255,.55),0 0 56px rgba(132,204,22,.4); }
+      .btn-secondary {
+        position:relative; display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+        border-radius:9999px; padding:.75rem 1.5rem; font-weight:600; color:#f4f4f5;
+        background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1); backdrop-filter:blur(8px);
+        transition:all .3s;
+      }
+      .btn-secondary:hover { border-color:rgba(185,100,255,.5); background:rgba(255,255,255,.10); box-shadow:0 0 24px rgba(185,100,255,.45); }
+      .glass-card { position:relative; border-radius:1rem; border:1px solid rgba(255,255,255,.10); background:rgba(255,255,255,.03); backdrop-filter:blur(8px); box-shadow:0 8px 32px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.04); overflow:hidden; }
+      .glass-card-hover { transition:all .5s; }
+      .glass-card-hover:hover { border-color:rgba(255,255,255,.20); box-shadow:0 0 30px rgba(185,100,255,.18),0 0 60px rgba(132,204,22,.10); transform:translateY(-4px); }
+      .section-title { font-family:'Space Grotesk',sans-serif; font-size:clamp(1.875rem,3.6vw,3rem); font-weight:700; letter-spacing:-.025em; line-height:1.1; }
+      .section-eyebrow { display:inline-flex; align-items:center; gap:.5rem; border-radius:9999px; border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.05); padding:.25rem .75rem; font-size:.75rem; font-weight:600; text-transform:uppercase; letter-spacing:.2em; color:#BEF264; }
+      .field-input {
+        width:100%; border-radius:.75rem;
+        background-color:#141417 !important;
+        border:1px solid rgba(255,255,255,.1);
+        padding:.75rem 1rem; font-size:.875rem;
+        color:#f4f4f5 !important; -webkit-text-fill-color:#f4f4f5 !important;
+        opacity:1;
+        outline:none; transition:all .2s;
+      }
+      .field-input::placeholder { color:#71717a !important; opacity:1 !important; }
+      .field-input:focus { border-color:rgba(185,100,255,.6) !important; box-shadow:0 0 0 4px rgba(185,100,255,.10) !important; }
+      .field-input:-webkit-autofill { -webkit-text-fill-color:#f4f4f5 !important; box-shadow:0 0 0 1000px #141417 inset !important; caret-color:#f4f4f5 !important; }
+      select.field-input { color:#f4f4f5 !important; background-color:#141417 !important; }
+      select.field-input option { background:#141417 !important; color:#f4f4f5 !important; }
+      .field-label { display:block; font-size:.75rem; font-weight:600; text-transform:uppercase; letter-spacing:.18em; color:#a1a1aa; margin-bottom:.5rem; }
+      .nav-link { position:relative; font-size:.875rem; font-weight:500; color:#d4d4d8; transition:color .2s; }
+      .nav-link:hover { color:#fff; }
+      .nav-link::after { content:""; position:absolute; left:0; bottom:-4px; height:1px; width:0; background:linear-gradient(135deg,#B964FF 0%,#84CC16 100%); transition:width .3s; }
+      .nav-link:hover::after { width:100%; }
+      .badge-lime { display:inline-flex; align-items:center; gap:.25rem; border-radius:9999px; background:rgba(163,230,53,.1); border:1px solid rgba(163,230,53,.3); padding:.25rem .625rem; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:#BEF264; }
+      .badge-purple { display:inline-flex; align-items:center; gap:.25rem; border-radius:9999px; background:rgba(185,100,255,.1); border:1px solid rgba(185,100,255,.3); padding:.25rem .625rem; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:#B964FF; }
+      .neon-divider { height:1px; background:linear-gradient(90deg,transparent,rgba(185,100,255,.6),rgba(132,204,22,.6),transparent); }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel" data-presets="react">
+      const { useState, useEffect } = React;
+      const Lucide = window.lucide;
+      const Icon = ({ name, className = "", strokeWidth = 2, ...rest }) => (
+        <i data-lucide={name} className={className} stroke-width={strokeWidth} {...rest} />
+      );
+
+      // ---------------- Dados ----------------
+      const SINGLE_SERVICES = [
+        { id:'lavagem-unica',         icon:'droplets',     title:'Lavagem Detalhada & Técnica',   description:'Snow foam, descontaminação química e secagem sem contato. Técnica de dois baldes para zero micro-riscos.',       features:['Snow foam premium','Descontaminação ferrosa','Microfibra 600gsm'],                                              priceFrom:'R$ 189',   badge:'Serviço Avulso' },
+        { id:'polimento-unico',       icon:'wrench',       title:'Correção de Pintura',           description:'Polimento técnico em múltiplas etapas que remove hologramas, swirls e devolve o brilho de concessionária.',     features:['1 a 3 etapas de polimento','Medição de espessura','Selante de proteção'],                                   priceFrom:'R$ 690',   badge:'Mais procurado' },
+        { id:'vitrificacao-unica',    icon:'shield-check', title:'Vitrificação Cerâmica',         description:'Coating cerâmico 9H com proteção UV, chuva ácida e até 3 anos de durabilidade. Brilho espelhado e hidrofobicidade extrema.', features:['Ceramic 9H / 10H','Garantia de até 3 anos','Hidro-repelência extrema'],                            priceFrom:'R$ 1.490', badge:'Top de linha' },
+        { id:'higienizacao-unica',    icon:'sparkles',     title:'Higienização & Couro',          description:'Higienização profunda de bancos, painéis, plásticos e teto. Tratamento de couro com nutrição e proteção UV.',  features:['Ozonização','Extratora profissional','Hidratação de couro'],                                              priceFrom:'R$ 349',   badge:'Serviço Avulso' },
+        { id:'pelicula-profissional', icon:'sun',          title:'Película Profissional',         description:'Carro completo. Película com excelente custo-benefício para proteção diária.',                                  features:['Proteção UV: mínimo 88%','Redução de calor: 40% a 50%','Ajuda a preservar o interior do carro','Reduz o ofuscamento do sol','Ótimo custo-benefício'], priceFrom:'R$ 400',   badge:'Películas' },
+        { id:'pelicula-nano-carbono', icon:'zap',          title:'Película Nano Carbono',         description:'Carro completo. Tecnologia Nano Carbono para mais conforto térmico no dia a dia.',                            features:['Proteção UV: mínimo 95%','Redução de calor: 60% a 70%','Tecnologia Nano Carbono','Ajuda a preservar o interior do veículo','Maior conforto térmico no dia a dia'], priceFrom:'R$ 700',   badge:'Películas' },
+        { id:'pelicula-nano-ceramica',icon:'flame',        title:'Película Nano Cerâmica',        description:'Carro completo. Proteção superior para quem utiliza o carro com frequência.',                                features:['Proteção UV: mínimo 97%','Redução de calor: 80% a 90%','Tecnologia Nano Cerâmica','Máxima proteção do interior do carro','Muito mais conforto térmico','Ideal para quem utiliza o carro com frequência'], priceFrom:'R$ 900',   badge:'Películas' },
+        { id:'pelicula-windows-blue', icon:'crown',        title:'Película Windows Blue (Linha Premium)', description:'Carro completo. O melhor do mercado: visual claro por dentro e máxima proteção.',                       features:['Proteção UV: 99%','Bloqueio de calor (infravermelho): acima de 90%','Tecnologia multicamadas de alta performance','Visual claro por dentro e máxima proteção','Máxima preservação do interior do veículo','Conforto térmico superior','Indicado para quem busca o melhor do mercado'], priceFrom:'R$ 1.500', badge:'Linha Premium' },
+      ];
+
+      const SERVICES = [
+        { id:'celta',  icon:'sparkles',     emoji:'🚗', title:'Pacote Celta',  description:'Ideal para manutenção básica do seu carro.', features:['2 Lavagens Klássicas no mês'], sizes:[{label:'P',price:'R$ 109'},{label:'M',price:'R$ 149'},{label:'G',price:'R$ 190'}], badge:'Manutenção' },
+        { id:'golf',   icon:'zap',          emoji:'⚡', title:'Pacote Golf',   description:'Mais frequência pro seu carro sempre limpo.', features:['2 Lavagens Klássicas','1 Klassica Express (lavagem rápida externa)'], sizes:[{label:'P',price:'R$ 139'},{label:'M',price:'R$ 179'},{label:'G',price:'R$ 219'}], badge:'Mais frequência' },
+        { id:'impala', icon:'flame',        emoji:'🔥', title:'Pacote Impala', description:'Estética + cuidado completo. O mais escolhido.', features:['1 Lavagem Klássica Suprema (detalhada)','2 Lavagens Klássicas','1 Klassica Express (somente externa)','Clareamento de faróis'], sizes:[{label:'P',price:'R$ 339'},{label:'M',price:'R$ 389'},{label:'G',price:'R$ 449'}], badge:'O mais escolhido', highlight:true },
+        { id:'ram',    icon:'shield',       emoji:'🐏', title:'Pacote Ram',    description:'Proteção e valorização do veículo.', features:['1 Lavagem Klássica Suprema (detalhada)','2 Lavagens Klássicas','1 Klassica Express (somente externa)','Descontaminação de pintura','Aplicação de cera','Remoção de chuva ácida','Cristalização de vidros'], sizes:[{label:'P',price:'R$ 549'},{label:'M',price:'R$ 649'},{label:'G',price:'R$ 749'}], badge:'Proteção total' },
+        { id:'bmw',    icon:'crown',        emoji:'💎', title:'Pacote BMW',    description:'Transformação completa + manutenção mensal. Premium.', features:['1 Lavagem Klássica Suprema (detalhada)','Descontaminação de pintura','Polimento Comercial','Remoção de chuva ácida','Cristalização de vidros','Selante de longa duração','Restauração de faróis','3 Lavagens Klássicas'], sizes:[{label:'P',price:'R$ 997'},{label:'M',price:'R$ 1.197'},{label:'G',price:'R$ 1.397'}], badge:'Premium' },
+      ];
+
+      const BENEFITS = [
+        { icon:'award',      title:'Produtos Importados',          desc:'Trabalhamos exclusivamente com Gyeon, Koch Chemie e CarPro — referência mundial em detailing automotivo.' },
+        { icon:'user-check', title:'Profissionais Certificados',   desc:'Equipe treinada e certificada pelas principais instituições do setor. Seu carro está com especialistas.' },
+        { icon:'sparkles',   title:'Atendimento Personalizado',    desc:'Diagnóstico gratuito, orçamento sob medida e cronograma claro do início ao fim do serviço.' },
+        { icon:'truck',      title:'Leva e Traz',                  desc:'Buscamos e entregamos seu carro em casa, no trabalho ou onde você estiver. Sem você perder tempo.' },
+      ];
+
+      const TESTIMONIALS = [
+        { name:'Fernando Felipe',  initials:'FF', rating:5, time:'há 1 mês',  source:'Google', text:'Serviço diferenciado! Meu carro ficou brilhando por mais de 1 semana após a lavagem. Atendimento excelente e resultado impecável. Super recomendo! ✨🚗' },
+        { name:'Kefanis Gandra',   initials:'KG', rating:5, time:'há 3 meses', source:'Google', text:'Ótima experiência! Atendimento diferenciado, profissional atencioso e muito bem preparado para explicar cada detalhe do serviço. Dá pra confiar de olhos fechados. Recomendo!' },
+        { name:'Marivaldo Andrade',initials:'MA', rating:5, time:'há 2 meses', source:'Google', text:'Serviço de qualidade top!' },
+        { name:'Diego Sena',       initials:'DS', rating:5, time:'há 1 mês',  source:'Google', text:'Excelente serviço, preço acessível para todos os tipos de serviços disponíveis. Indico demais os serviços da Klassic.' },
+      ];
+
+      const GOOGLE_LOGO_SVG = '<svg viewBox="0 0 48 48" class="h-4 w-4" aria-hidden="true"><path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/><path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/><path fill="#FBBC05" d="M11.69 28.18c-.44-1.32-.69-2.73-.69-4.18s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z"/><path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/></svg>';
+
+      const LINKS = [
+        { href:'#servicos',         label:'Pacotes'          },
+        { href:'#servicos-avulsos', label:'Serviços' },
+        { href:'#diferenciais',     label:'Diferenciais'     },
+        { href:'#avaliacoes',       label:'Avaliações'       },
+        { href:'#contato',          label:'Contato'          },
+      ];
+
+      const WA_NUMBER = '5511993784778';
+      const WA_DISPLAY = '+55 (11) 99378-4778';
+      const WA_MSG_GENERAL = encodeURIComponent('Olá Klassic Kar! Quero saber mais sobre os serviços.');
+      const WA_MSG_PACKAGE = encodeURIComponent('Olá Klassic Kar! Quero assinar um pacote.');
+      const WA_MSG_SINGLE  = encodeURIComponent('Olá Klassic Kar! Quero agendar um serviço avulso.');
+      const waLink = (msg = WA_MSG_GENERAL) => `https://wa.me/${WA_NUMBER}?text=${msg}`;
+      const WA_LINK = waLink(WA_MSG_SINGLE);
+
+      // ---------------- Componentes ----------------
+      const Logo = ({ size = 'md' }) => {
+        const sizes = { sm:'h-8 w-8 text-base', md:'h-9 w-9 text-lg', lg:'h-12 w-12 text-2xl' };
+        const cls = sizes[size] || sizes.md;
+        return (
+          <a href="#top" className="group inline-flex items-center gap-2.5">
+            <span className={`relative grid place-items-center rounded-xl ${cls.split(' ')[0]} ${cls.split(' ')[1]} bg-ink-300 ring-1 ring-white/10`}>
+              <span className="absolute inset-0 rounded-xl bg-gradient-brand opacity-20"></span>
+              <span className="font-display font-bold text-gradient text-base">K</span>
+            </span>
+            <span className={`font-display font-bold tracking-tight ${cls.split(' ')[2]}`}>
+              <span className="text-white">Klassic</span><span className="text-gradient"> Kar</span>
+            </span>
+          </a>
+        );
+      };
+
+      const Navbar = () => {
+        const [scrolled, setScrolled] = useState(false);
+        const [open, setOpen] = useState(false);
+        useEffect(() => {
+          const onScroll = () => setScrolled(window.scrollY > 12);
+          onScroll();
+          window.addEventListener('scroll', onScroll, { passive: true });
+          return () => window.removeEventListener('scroll', onScroll);
+        }, []);
+        useEffect(() => {
+          const onResize = () => { if (window.innerWidth >= 768) setOpen(false); };
+          window.addEventListener('resize', onResize);
+          return () => window.removeEventListener('resize', onResize);
+        }, []);
+        return (
+          <header id="top" className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? 'backdrop-blur-xl bg-ink/85 border-b border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.35)]' : 'bg-transparent'}`}>
+            <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 h-16 md:h-20">
+              <Logo />
+              <ul className="hidden md:flex items-center gap-8">
+                {LINKS.map(l => (
+                  <li key={l.href}><a href={l.href} className="nav-link">{l.label}</a></li>
+                ))}
+              </ul>
+              <div className="hidden md:flex items-center gap-3">
+                <a href={WA_LINK} target="_blank" rel="noreferrer" className="btn-primary text-sm">
+                  <Icon name="calendar-check" className="h-4 w-4" /> Agendar Agora
+                </a>
+              </div>
+              <button type="button" aria-label={open ? 'Fechar menu' : 'Abrir menu'} aria-expanded={open}
+                onClick={() => setOpen(v => !v)}
+                className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-zinc-100 hover:bg-white/10 transition">
+                <Icon name={open ? 'x' : 'menu'} className="h-5 w-5" />
+              </button>
+            </nav>
+            <div className={`md:hidden overflow-hidden transition-[max-height,opacity] duration-300 ${open ? 'max-h-[420px] opacity-100' : 'max-h-0 opacity-0'}`}>
+              <div className="mx-4 mb-4 rounded-2xl border border-white/10 bg-ink/90 backdrop-blur-xl p-4 shadow-card">
+                <ul className="flex flex-col gap-1">
+                  {LINKS.map(l => (
+                    <li key={l.href}><a href={l.href} onClick={() => setOpen(false)} className="block rounded-xl px-3 py-3 text-sm font-medium text-zinc-200 hover:bg-white/5 hover:text-white transition">{l.label}</a></li>
+                  ))}
+                </ul>
+                <a href="#contato" onClick={() => setOpen(false)} className="btn-primary mt-3 w-full text-sm">
+                  <Icon name="calendar-check" className="h-4 w-4" /> Agendar Agora
+                </a>
+              </div>
+            </div>
+          </header>
+        );
+      };
+
+      const Hero = () => (
+        <section className="relative isolate overflow-hidden pt-28 md:pt-36 pb-20 md:pb-28">
+          <div className="absolute inset-0 -z-10">
+            <div className="absolute inset-0 bg-cover bg-center opacity-50 md:opacity-70" style={{ backgroundImage:"url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1920&q=80')" }}></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-ink via-ink/70 to-ink"></div>
+            <div className="absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_40%,rgba(185,100,255,0.20),transparent_70%)]"></div>
+            <div className="absolute inset-0 opacity-[0.08]" style={{ backgroundImage:'linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)', backgroundSize:'44px 44px', maskImage:'radial-gradient(ellipse at center, black 50%, transparent 85%)' }}></div>
+          </div>
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-4xl text-center">
+              <div className="inline-flex items-center gap-2 rounded-full border border-neon-lime/30 bg-neon-lime/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-neon-lime backdrop-blur animate-fade-up">
+                <Icon name="sparkles" className="h-3.5 w-3.5" /> Agenda aberta · Apenas 6 vagas esta semana
+              </div>
+              <h1 className="mt-6 font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight animate-fade-up">
+                <span className="text-white">Todo carro novo</span>{' '}
+                <span className="text-white">um dia vira</span>{' '}
+                <span className="text-gradient">Klassic.</span>
+              </h1>
+              <p className="mt-6 mx-auto max-w-2xl text-base sm:text-lg text-zinc-300 animate-fade-up">
+                Detalhamento profissional, vitrificação cerâmica e lavagem técnica
+                executados por <strong className="text-white">especialistas certificados</strong>.
+                Produtos premium internacionais, leva-e-traz e garantia documentada.
+              </p>
+              <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 animate-fade-up">
+                <a href="#contato" className="btn-primary group text-base px-7 py-3.5 animate-pulse-glow">
+                  <Icon name="message-circle" className="h-5 w-5" /> Agendar pelo WhatsApp
+                  <Icon name="arrow-right" className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                </a>
+                <a href="#servicos" className="btn-secondary text-base px-7 py-3.5">Ver Serviços</a>
+              </div>
+
+              {/* Prova social inline */}
+              <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 animate-fade-up">
+                <div className="flex -space-x-2">
+                  {['#B964FF','#84CC16','#8B5CF6','#BEF264'].map((c, i) => (
+                    <span key={i} className="grid h-8 w-8 place-items-center rounded-full border-2 border-ink-300 text-[11px] font-bold text-ink-300" style={{ background:c }}>
+                      {['R','C','D','L'][i]}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex items-center gap-2 text-sm text-zinc-300">
+                  <div className="flex items-center gap-0.5">
+                    {Array.from({length:5}).map((_,i) => (
+                      <Icon key={i} name="star" className="h-3.5 w-3.5 text-neon-lime fill-neon-lime" />
+                    ))}
+                  </div>
+                  <span><strong className="text-white">5,0/5</strong> · 5 avaliações no Google</span>
+                </div>
+              </div>
+
+              <div className="mt-6 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 animate-fade-up">
+                <span className="badge-purple"><Icon name="shield-check" className="h-3.5 w-3.5" /> Garantia 12 meses</span>
+                <span className="badge-lime">Certificação ICR / IDR</span>
+                <span className="badge-purple">Leva e Traz Grátis*</span>
+              </div>
+            </div>
+
+            <div className="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+              {[{ v:'+8', l:'anos de mercado' }, { v:'1.200+', l:'carros atendidos' }, { v:'100%', l:'satisfação' }, { v:'12m', l:'garantia' }].map(kpi => (
+                <div key={kpi.l} className="glass-card glass-card-hover p-4 sm:p-5 text-center animate-fade-up">
+                  <div className="font-display text-2xl sm:text-3xl font-bold text-gradient">{kpi.v}</div>
+                  <div className="mt-1 text-[11px] sm:text-xs uppercase tracking-wider text-zinc-400">{kpi.l}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-ink"></div>
+        </section>
+      );
+
+      const Benefits = () => (
+        <section id="diferenciais" className="relative py-20 md:py-28">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-2xl text-center">
+              <span className="section-eyebrow"><Icon name="badge-check" className="h-3.5 w-3.5" /> Por que escolher a Klassic Kar</span>
+              <h2 className="section-title mt-4">Os <span className="text-gradient">4 pilares</span> que fazem a diferença</h2>
+              <p className="mt-4 text-zinc-400">Não somos mais um. Somos a referência em estética automotiva premium da região.</p>
+            </div>
+            <div className="mt-12 grid gap-4 sm:gap-5 sm:grid-cols-2">
+              {BENEFITS.map(b => (
+                <div key={b.title} className="glass-card glass-card-hover relative p-6 sm:p-7 animate-fade-up">
+                  <span className="grid h-14 w-14 place-items-center rounded-2xl border border-white/10 text-neon-purple" style={{ background:'linear-gradient(135deg, rgba(185,100,255,0.18) 0%, rgba(132,204,22,0.12) 100%)', boxShadow:'0 0 24px rgba(185, 100, 255, 0.45)' }}>
+                    <Icon name={b.icon} className="h-7 w-7" />
+                  </span>
+                  <h3 className="mt-5 text-lg sm:text-xl font-semibold text-white">{b.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-zinc-400">{b.desc}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-14 glass-card p-6 sm:p-8">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                {[{ v:'4.9/5', l:'Avaliação Google' }, { v:'+1.200', l:'Carros atendidos' }, { v:'98%', l:'Recomendariam' }, { v:'12 meses', l:'Garantia média' }].map(s => (
+                  <div key={s.l}>
+                    <div className="font-display text-2xl md:text-3xl font-bold text-gradient">{s.v}</div>
+                    <div className="mt-1 text-xs uppercase tracking-wider text-zinc-400">{s.l}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      );
+
+      const SingleServices = () => (
+        <section id="servicos-avulsos" className="relative py-20 md:py-28">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-2xl text-center">
+              <span className="section-eyebrow"><Icon name="droplets" className="h-3.5 w-3.5" /> Serviços</span>
+              <h2 className="section-title mt-4">Precisa de um serviço <span className="text-gradient">pontual</span>?</h2>
+              <p className="mt-4 text-zinc-400">Pagamento único, sem fidelidade. Ideal para quem quer cuidar do carro em uma ocasião especial ou experimentar nossos serviços.</p>
+            </div>
+            <div className="mt-12 grid gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              {SINGLE_SERVICES.map(s => (
+                <article key={s.id} className="glass-card glass-card-hover group flex flex-col p-6 relative animate-fade-up">
+                  <div className={`absolute -top-24 -right-24 h-48 w-48 rounded-full bg-gradient-to-br ${s.gradient} blur-3xl opacity-40 transition-opacity group-hover:opacity-80`}></div>
+                  <div className="relative flex items-center justify-between">
+                    <span className="grid h-12 w-12 place-items-center rounded-xl bg-white/5 border border-white/10 text-neon-purple transition-all group-hover:text-neon-lime">
+                      <Icon name={s.icon} className="h-6 w-6" />
+                    </span>
+                    <span className="badge-lime"><Icon name="badge-check" className="h-3.5 w-3.5" /> {s.badge}</span>
+                  </div>
+                  <h3 className="mt-5 text-lg font-semibold text-white">{s.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-zinc-400">{s.description}</p>
+                  <ul className="mt-4 space-y-1.5">
+                    {s.features.map(f => (
+                      <li key={f} className="flex items-center gap-2 text-xs text-zinc-300">
+                        <Icon name="check" className="h-3.5 w-3.5 text-neon-lime flex-shrink-0" />{f}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-6 pt-5 border-t border-white/5">
+                    <div className="flex items-end justify-between mb-4">
+                      <div>
+                        <div className="text-[11px] uppercase tracking-wider text-zinc-500">A partir de</div>
+                        <div className="font-display text-2xl font-bold text-neon-lime">{s.priceFrom}</div>
+                      </div>
+                    </div>
+                    <a href="#contato" className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/10 px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-white transition hover:border-neon-purple/50" style={{ background:'linear-gradient(135deg, rgba(185,100,255,0.18) 0%, rgba(132,204,22,0.12) 100%)' }}>
+                      Agendar este serviço <Icon name="arrow-right" className="h-3.5 w-3.5" />
+                    </a>
+                  </div>
+                </article>
+              ))}
+            </div>
+            <p className="mt-8 text-center text-xs text-zinc-500">* Valores de referência. Orçamento personalizado conforme modelo e estado do veículo.</p>
+          </div>
+        </section>
+      );
+
+      const Services = () => (
+        <section id="servicos" className="relative py-20 md:py-28">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-2xl text-center">
+              <span className="section-eyebrow"><Icon name="badge-check" className="h-3.5 w-3.5" /> Pacotes Mensais</span>
+              <h2 className="section-title mt-4">Escolha o pacote <span className="text-gradient">ideal para o seu carro</span></h2>
+              <p className="mt-4 text-zinc-400">Planos mensais com tudo incluso. Escolha o tamanho do seu veículo (Pequeno, Médio ou Grande) e comece hoje.</p>
+            </div>
+            <div className="mt-12 grid gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {SERVICES.map(s => (
+                <article key={s.id} className={`glass-card glass-card-hover group flex flex-col p-6 relative animate-fade-up ${s.highlight ? 'ring-2 ring-neon-purple/60 lg:scale-[1.02] lg:-translate-y-1' : ''}`}>
+                  <div className="relative flex items-start justify-between gap-3">
+                    <div className="flex items-center gap-3">
+                      <span className={`grid h-12 w-12 place-items-center rounded-xl bg-white/5 border border-white/10 transition-all ${s.highlight ? 'text-neon-lime' : 'text-neon-purple group-hover:text-neon-lime'}`}>
+                        <Icon name={s.icon} className="h-6 w-6" />
+                      </span>
+                      <div className="text-2xl">{s.emoji}</div>
+                    </div>
+                    <span className={s.highlight ? 'badge-lime' : 'badge-purple'}>{s.badge}</span>
+                  </div>
+                  <h3 className="mt-5 text-xl font-bold text-white flex items-center gap-2">
+                    {s.title}
+                    {s.highlight && <Icon name="crown" className="h-4 w-4 text-neon-lime" />}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-zinc-400">{s.description}</p>
+                  <ul className="mt-4 space-y-1.5">
+                    {s.features.map(f => (
+                      <li key={f} className="flex items-start gap-2 text-xs text-zinc-300">
+                        <Icon name="check" className="h-3.5 w-3.5 text-neon-lime flex-shrink-0 mt-0.5" />
+                        <span>{f}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-6 pt-5 border-t border-white/5">
+                    <div className="text-[11px] uppercase tracking-wider text-zinc-500 mb-3 text-center">Valor mensal por porte</div>
+                    <div className="grid grid-cols-3 gap-2">
+                      {s.sizes.map((size, idx) => (
+                        <div key={size.label} className={`rounded-xl p-2.5 text-center border transition ${idx === 1 ? 'border-neon-purple/50' : 'border-white/10 bg-white/[0.02]'}`} style={idx === 1 ? { background:'linear-gradient(135deg, rgba(185,100,255,0.18) 0%, rgba(132,204,22,0.12) 100%)', boxShadow:'0 0 24px rgba(185, 100, 255, 0.45)' } : {}}>
+                          <div className="text-[10px] font-bold uppercase tracking-wider text-zinc-400">{size.label}</div>
+                          <div className={`font-display text-sm sm:text-base font-bold mt-0.5 ${idx === 1 ? 'text-gradient' : 'text-neon-lime'}`}>{size.price}</div>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="mt-1.5 text-[10px] text-center text-zinc-500">P: Pequeno · M: Médio · G: Grande</div>
+                  </div>
+                  <a href="#contato" className={`mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full px-4 py-3 text-xs font-bold uppercase tracking-wider transition ${s.highlight ? 'text-ink-300 hover:scale-[1.02]' : 'border border-white/10 text-white hover:border-neon-purple/50'}`} style={s.highlight ? { background:'linear-gradient(135deg,#B964FF 0%,#84CC16 100%)', boxShadow:'0 0 32px rgba(185,100,255,0.45), 0 0 32px rgba(132,204,22,0.45)' } : { background:'linear-gradient(135deg, rgba(185,100,255,0.18) 0%, rgba(132,204,22,0.12) 100%)' }}>
+                    Quero este pacote <Icon name="arrow-right" className="h-3.5 w-3.5" />
+                  </a>
+                </article>
+              ))}
+            </div>
+            <p className="mt-8 text-center text-xs text-zinc-500">* Valores por mês. Contratos com fidelidade opcional. Desconto progressivo em pacotes anuais.</p>
+          </div>
+        </section>
+      );
+
+      const CTA = () => (
+        <section className="relative py-12 md:py-16">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-ink-100 p-8 sm:p-12 animate-fade-up">
+              <div className="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-neon-purple/30 blur-3xl"></div>
+              <div className="absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-neon-lime/25 blur-3xl"></div>
+              <div className="absolute inset-0 opacity-[0.07]" style={{ backgroundImage:'linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)', backgroundSize:'40px 40px', maskImage:'radial-gradient(ellipse at center, black 40%, transparent 80%)' }}></div>
+              <div className="relative flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+                <div className="max-w-2xl">
+                  <span className="section-eyebrow"><Icon name="sparkles" className="h-3.5 w-3.5" /> Oferta por tempo limitado</span>
+                  <h3 className="mt-4 font-display text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">
+                    <span className="text-white">Agende esta semana e ganhe</span>{' '}
+                    <span className="text-gradient">avaliação técnica gratuita</span>
+                    <span className="text-white"> + brinde de hidratação de plásticos.</span>
+                  </h3>
+                  <p className="mt-3 text-zinc-400">Vagas limitadas. Resposta em até 30 minutos pelo WhatsApp.</p>
+                </div>
+                <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
+                  <a href={WA_LINK} target="_blank" rel="noreferrer" className="btn-primary animate-pulse-glow whitespace-nowrap">
+                    <Icon name="message-circle" className="h-4 w-4" /> Chamar no WhatsApp <Icon name="arrow-right" className="h-4 w-4" />
+                  </a>
+                  <a href="#contato" className="btn-secondary whitespace-nowrap">Ver formulário</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      );
+
+      const Testimonials = () => (
+        <section id="avaliacoes" className="relative py-20 md:py-28">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-2xl text-center">
+              <span className="section-eyebrow"><Icon name="star" className="h-3.5 w-3.5 fill-current" /> Avaliações do Google</span>
+              <h2 className="section-title mt-4"><span className="text-gradient">5,0</span> de 5 estrelas</h2>
+
+              <div className="mt-6 inline-flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur">
+                <div className="flex items-center gap-0.5">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Icon key={i} name="star" className="h-4 w-4 text-neon-lime fill-neon-lime" style={{ filter:'drop-shadow(0 0 6px rgba(132,204,22,0.5))' }} />
+                  ))}
+                </div>
+                <span className="text-sm font-semibold text-white">5,0</span>
+                <span className="text-xs text-zinc-400">· 5 avaliações no Google</span>
+                <span dangerouslySetInnerHTML={{ __html: GOOGLE_LOGO_SVG }} />
+              </div>
+
+              <p className="mt-4 text-zinc-400 text-sm">
+                Klassic Kar Estética Automotiva · R. Mário Linhares, 561 - Jardim Inga, São Paulo - SP
+              </p>
+            </div>
+            <div className="mt-12 grid gap-5 sm:gap-6 md:grid-cols-2">
+              {TESTIMONIALS.map(t => (
+                <article key={t.name} className="glass-card glass-card-hover relative p-6 sm:p-8 animate-fade-up">
+                  <Icon name="quote" className="absolute -top-3 -left-3 h-8 w-8 text-neon-purple/40" />
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-1">
+                      {Array.from({ length: t.rating }).map((_, i) => (
+                        <Icon key={i} name="star" className="h-4 w-4 text-neon-lime fill-neon-lime" style={{ filter:'drop-shadow(0 0 6px rgba(132,204,22,0.5))' }} />
+                      ))}
+                    </div>
+                    <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-zinc-300">
+                      <span dangerouslySetInnerHTML={{ __html: GOOGLE_LOGO_SVG }} />
+                      <span>Avaliação Google</span>
+                    </span>
+                  </div>
+                  <p className="mt-4 text-zinc-200 leading-relaxed">“{t.text}”</p>
+                  <div className="mt-6 flex items-center justify-between pt-5 border-t border-white/5">
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-neon-purple to-neon-violet text-sm font-bold text-white">
+                        {t.initials}
+                      </div>
+                      <div>
+                        <div className="text-sm font-semibold text-white">{t.name}</div>
+                        <div className="text-xs text-zinc-400">{t.time}</div>
+                      </div>
+                    </div>
+                    <span className="badge-purple"><Icon name="badge-check" className="mr-1 inline h-3 w-3" /> Verificada</span>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+
+      const ContactForm = () => {
+        const initialForm = { name:'', phone:'', carModel:'', service:SERVICES[0].id, size:'M' };
+        const [form, setForm] = useState(initialForm);
+        const [status, setStatus] = useState('idle');
+        const [errors, setErrors] = useState({});
+        const handleChange = (e) => {
+          const { name, value } = e.target;
+          setForm(f => ({ ...f, [name]: value }));
+          if (errors[name]) setErrors(er => ({ ...er, [name]: undefined }));
+        };
+        const validate = () => {
+          const er = {};
+          if (!form.name.trim()) er.name = 'Informe seu nome.';
+          if (!form.phone.trim() || form.phone.replace(/\D/g,'').length < 10) er.phone = 'Informe um WhatsApp válido com DDD.';
+          if (!form.carModel.trim()) er.carModel = 'Informe o modelo do carro.';
+          setErrors(er);
+          return Object.keys(er).length === 0;
+        };
+        const onSubmit = (e) => {
+          e.preventDefault();
+          if (!validate()) return;
+          setStatus('loading');
+          setTimeout(() => setStatus('sent'), 1000);
+        };
+        const isPackage = SERVICES.some(s => s.id === form.service);
+        const selectedPackage = SERVICES.find(s => s.id === form.service);
+        const selectedSingle = SINGLE_SERVICES.find(s => s.id === form.service);
+        const selectedService = selectedPackage || selectedSingle;
+        const selectedPrice = isPackage
+          ? selectedPackage?.sizes.find(p => p.label === form.size)?.price ?? '—'
+          : selectedSingle?.priceFrom ?? '—';
+        const formWhatsappLink = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(
+          isPackage
+            ? `Olá! Sou ${form.name}, tenho um ${form.carModel} (porte ${form.size}) e gostaria de assinar o ${selectedService?.title} (${selectedPrice}/mês).`
+            : `Olá! Sou ${form.name}, tenho um ${form.carModel} e gostaria de agendar o serviço avulso: ${selectedService?.title} (${selectedPrice}).`
+        )}`;
+
+        return (
+          <section id="contato" className="relative py-20 md:py-28">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] items-start">
+                <div>
+                  <span className="section-eyebrow"><Icon name="calendar-check" className="h-3.5 w-3.5" /> Assine um pacote</span>
+                  <h2 className="section-title mt-4">Comece hoje seu <span className="text-gradient">plano mensal</span></h2>
+                  <p className="mt-4 text-zinc-400 max-w-lg">Preencha os dados abaixo e nossa equipe confirmará sua assinatura pelo WhatsApp em até 30 minutos.</p>
+                  <ul className="mt-8 space-y-4">
+                    {[
+                      { icon:'⚡', t:'Ativação em até 24 horas' },
+                      { icon:'🛡️', t:'Sem fidelidade — cancele quando quiser' },
+                      { icon:'🚗', t:'Leva e traz disponível na região' },
+                    ].map(it => (
+                      <li key={it.t} className="flex items-center gap-3 text-sm text-zinc-200">
+                        <span className="grid h-10 w-10 place-items-center rounded-xl border border-white/10 text-neon-lime text-lg" style={{ background:'linear-gradient(135deg, rgba(185,100,255,0.18) 0%, rgba(132,204,22,0.12) 100%)' }}>{it.icon}</span>
+                        {it.t}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-8 glass-card p-5">
+                    <div className="text-xs uppercase tracking-wider text-zinc-400">Atendimento direto</div>
+                    <a href={waLink(WA_MSG_PACKAGE)} target="_blank" rel="noreferrer" className="mt-2 inline-flex items-center gap-2 text-lg font-semibold text-gradient">
+                      <Icon name="message-circle" className="h-5 w-5" /> {WA_DISPLAY}
+                    </a>
+                    <p className="mt-1 text-xs text-zinc-500">Seg–Sáb · 08h às 19h</p>
+                  </div>
+                </div>
+                <form onSubmit={onSubmit} className="glass-card p-6 sm:p-8 relative animate-fade-up" noValidate>
+                  <div className="pointer-events-none absolute -top-24 -right-24 h-56 w-56 rounded-full blur-3xl" style={{ background:'linear-gradient(135deg, rgba(185,100,255,0.18) 0%, rgba(132,204,22,0.12) 100%)' }}></div>
+                  {status === 'sent' ? (
+                    <div className="text-center py-8">
+                      <span className="mx-auto grid h-14 w-14 place-items-center rounded-full" style={{ background:'linear-gradient(135deg,#B964FF 0%,#84CC16 100%)', boxShadow:'0 0 32px rgba(185,100,255,0.45), 0 0 32px rgba(132,204,22,0.45)' }}>
+                        <Icon name="check-circle-2" className="h-7 w-7 text-ink-300" />
+                      </span>
+                      <h3 className="mt-5 font-display text-2xl font-bold text-white">Pedido enviado!</h3>
+                      <p className="mt-2 text-zinc-400">Confirmaremos sua assinatura pelo WhatsApp em até 30 minutos. Para acelerar, toque no botão abaixo:</p>
+                      <a href={formWhatsappLink} target="_blank" rel="noreferrer" className="btn-primary mt-6 animate-pulse-glow">
+                        <Icon name="message-circle" className="h-4 w-4" /> Falar no WhatsApp agora
+                      </a>
+                      <button type="button" onClick={() => { setStatus('idle'); setForm(initialForm); }} className="block mx-auto mt-4 text-sm text-zinc-400 hover:text-white underline-offset-4 hover:underline">Enviar novo pedido</button>
+                    </div>
+                  ) : (
+                    <div className="relative">
+                      <div className="mb-5 flex items-center gap-2 text-xs text-zinc-400">
+                        <Icon name="shield" className="h-3.5 w-3.5 text-neon-lime" /> Seus dados estão seguros. Não enviamos spam.
+                      </div>
+                      <div className="grid gap-4 sm:grid-cols-2">
+                        <div>
+                          <label htmlFor="name" className="field-label flex items-center gap-1.5"><Icon name="user" className="h-3.5 w-3.5" /> Nome</label>
+                          <input id="name" name="name" type="text" autoComplete="name" placeholder="Seu nome" value={form.name} onChange={handleChange} className="field-input" />
+                          {errors.name && <p className="mt-1 text-xs text-red-400">{errors.name}</p>}
+                        </div>
+                        <div>
+                          <label htmlFor="phone" className="field-label flex items-center gap-1.5"><Icon name="phone" className="h-3.5 w-3.5" /> WhatsApp</label>
+                          <input id="phone" name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder="(11) 99378-4778" value={form.phone} onChange={handleChange} className="field-input" />
+                          {errors.phone && <p className="mt-1 text-xs text-red-400">{errors.phone}</p>}
+                        </div>
+                        <div className="sm:col-span-2">
+                          <label htmlFor="carModel" className="field-label flex items-center gap-1.5"><Icon name="car" className="h-3.5 w-3.5" /> Modelo do carro</label>
+                          <input id="carModel" name="carModel" type="text" placeholder="Ex.: HB20 2022, Onix Plus, Jeep Compass..." value={form.carModel} onChange={handleChange} className="field-input" />
+                          {errors.carModel && <p className="mt-1 text-xs text-red-400">{errors.carModel}</p>}
+                        </div>
+                        <div>
+                          <label htmlFor="service" className="field-label flex items-center gap-1.5"><Icon name="package" className="h-3.5 w-3.5" /> Pacote ou serviço</label>
+                          <select id="service" name="service" value={form.service} onChange={handleChange} className="field-input">
+                            <optgroup label="📦 Pacotes Mensais (assinatura)">
+                              {SERVICES.map(s => (
+                                <option key={s.id} value={s.id}>{s.emoji} {s.title} — a partir de {s.sizes[0].price}</option>
+                              ))}
+                            </optgroup>
+                            <optgroup label="💧 Serviços">
+                              {SINGLE_SERVICES.map(s => (
+                                <option key={s.id} value={s.id}>{s.title} — a partir de {s.priceFrom}</option>
+                              ))}
+                            </optgroup>
+                          </select>
+                        </div>
+                        {isPackage ? (
+                          <div>
+                            <label htmlFor="size" className="field-label flex items-center gap-1.5"><Icon name="car" className="h-3.5 w-3.5" /> Porte do veículo</label>
+                            <select id="size" name="size" value={form.size} onChange={handleChange} className="field-input">
+                              <option value="P">P — Pequeno (HB20, Onix, Mobi)</option>
+                              <option value="M">M — Médio (Cruze, Corolla, Compass)</option>
+                              <option value="G">G — Grande (Hilux, Ranger, SUVs grandes)</option>
+                            </select>
+                          </div>
+                        ) : (
+                          <div>
+                            <label className="field-label flex items-center gap-1.5"><Icon name="droplets" className="h-3.5 w-3.5" /> Tipo</label>
+                            <div className="field-input flex items-center justify-between cursor-not-allowed opacity-80">
+                              <span className="text-zinc-400">Pagamento único</span>
+                              <span className="badge-lime">Sem fidelidade</span>
+                            </div>
+                          </div>
+                        )}
+                        <div className="sm:col-span-2 rounded-xl border border-white/10 p-4 flex items-center justify-between" style={{ background:'linear-gradient(135deg, rgba(185,100,255,0.18) 0%, rgba(132,204,22,0.12) 100%)' }}>
+                          <div>
+                            <div className="text-xs uppercase tracking-wider text-zinc-400">{isPackage ? 'Valor mensal estimado' : 'Valor do serviço'}</div>
+                            <div className="font-display text-2xl font-bold text-gradient">{selectedPrice}</div>
+                          </div>
+                          <div className="text-right">
+                            <div className="text-[11px] text-zinc-400">{isPackage ? `${selectedService?.emoji} ${selectedService?.title}` : selectedService?.title}</div>
+                            <div className="text-[11px] text-zinc-400">{isPackage ? `Porte ${form.size}` : 'Serviço avulso'}</div>
+                          </div>
+                        </div>
+                      </div>
+                      <button type="submit" disabled={status === 'loading'} className="btn-primary mt-6 w-full text-base py-4 animate-pulse-glow disabled:opacity-70">
+                        {status === 'loading' ? (
+                          <><Icon name="loader" className="h-5 w-5 animate-spin" /> Enviando…</>
+                        ) : (
+                          <><Icon name="message-circle" className="h-5 w-5" /> {isPackage ? 'Quero assinar agora' : 'Quero agendar agora'}</>
+                        )}
+                      </button>
+                      <div className="my-5 flex items-center gap-3 text-xs text-zinc-500">
+                        <div className="h-px flex-1 bg-white/10"></div>ou, se preferir<div className="h-px flex-1 bg-white/10"></div>
+                      </div>
+                      <a href={waLink(WA_MSG_PACKAGE)} target="_blank" rel="noreferrer" className="btn-secondary w-full text-sm">
+                        <Icon name="message-circle" className="h-4 w-4" /> Falar direto no WhatsApp
+                      </a>
+                      <p className="mt-4 text-[11px] text-zinc-500 text-center">Ao enviar, você concorda com nossa política de privacidade.</p>
+                    </div>
+                  )}
+                </form>
+              </div>
+            </div>
+          </section>
+        );
+      };
+
+      const Footer = () => {
+        const social = [
+          { icon:'instagram', label:'Instagram', href:'https://instagram.com/klassickar.estetica' },
+          { icon:'facebook',  label:'Facebook',  href:'https://facebook.com/klassickar'  },
+          { icon:'youtube',   label:'YouTube',   href:'https://youtube.com/@klassickar'   },
+        ];
+        const nav = [
+          { title:'Serviços', links:[{ label:'Lavagem Detalhada', href:'#servicos' }, { label:'Correção de Pintura', href:'#servicos' }, { label:'Vitrificação Cerâmica', href:'#servicos' }, { label:'Higienização Interna', href:'#servicos' }]},
+          { title:'Empresa',  links:[{ label:'Diferenciais', href:'#diferenciais' }, { label:'Avaliações', href:'#avaliacoes' }, { label:'Agendar', href:'#contato' }, { label:'Sobre nós', href:'#' }]},
+          { title:'Suporte',  links:[{ label:'Política de Privacidade', href:'#' }, { label:'Garantia', href:'#' }, { label:'FAQ', href:'#' }, { label:'Trabalhe conosco', href:'#' }]},
+        ];
+        return (
+          <footer className="relative border-t border-white/10 bg-ink-300">
+            <div className="absolute inset-x-0 top-0 h-px neon-divider"></div>
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
+              <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+                <div>
+                  <Logo />
+                  <p className="mt-4 text-sm text-zinc-400 max-w-xs">Estética automotiva premium: detalhamento, vitrificação, lavagem técnica e higienização interna. Excelência em cada detalhe.</p>
+                  <div className="mt-5 flex items-center gap-2">
+                    {social.map(s => (
+                      <a key={s.label} href={s.href} target="_blank" rel="noreferrer" aria-label={s.label} className="grid h-9 w-9 place-items-center rounded-full border border-white/10 bg-white/5 text-zinc-300 transition hover:text-white hover:border-neon-purple/50" style={{}}>
+                        <Icon name={s.icon} className="h-4 w-4" />
+                      </a>
+                    ))}
+                  </div>
+                </div>
+                {nav.map(g => (
+                  <div key={g.title}>
+                    <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-neon-lime">{g.title}</h4>
+                    <ul className="mt-4 space-y-2.5">
+                      {g.links.map(l => (
+                        <li key={l.label}>
+                          <a href={l.href} className="group inline-flex items-center gap-1 text-sm text-zinc-300 hover:text-white transition">
+                            {l.label}
+                            <Icon name="arrow-up-right" className="h-3.5 w-3.5 opacity-0 -translate-x-1 transition-all group-hover:opacity-100 group-hover:translate-x-0" />
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-12 grid gap-4 sm:grid-cols-3">
+                {[
+                  { icon:'map-pin', t:'Av. Premium, 1234 — São Paulo / SP' },
+                  { icon:'phone',   t: WA_DISPLAY },
+                  { icon:'mail',    t:'contato@klassickar.com.br' },
+                ].map(c => (
+                  <div key={c.t} className="glass-card flex items-center gap-3 p-4">
+                    <span className="grid h-9 w-9 place-items-center rounded-xl border border-white/10 text-neon-purple" style={{ background:'linear-gradient(135deg, rgba(185,100,255,0.18) 0%, rgba(132,204,22,0.12) 100%)' }}>
+                      <Icon name={c.icon} className="h-4 w-4" />
+                    </span>
+                    <span className="text-sm text-zinc-200">{c.t}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-white/5 pt-6">
+                <p className="text-xs text-zinc-500">© {new Date().getFullYear()} Klassic Kar — Estética Automotiva Premium. Todos os direitos reservados.</p>
+                <p className="text-xs text-zinc-500">CNPJ 00.000.000/0001-00 · Desenvolvido com <span className="text-gradient font-semibold">♥</span></p>
+              </div>
+            </div>
+          </footer>
+        );
+      };
+
+      const FloatingButtons = () => {
+        const [showTop, setShowTop] = useState(false);
+        useEffect(() => {
+          const onScroll = () => setShowTop(window.scrollY > 400);
+          onScroll();
+          window.addEventListener('scroll', onScroll, { passive: true });
+          return () => window.removeEventListener('scroll', onScroll);
+        }, []);
+        return (
+          <div className="fixed right-4 sm:right-6 bottom-4 sm:bottom-6 z-40 flex flex-col items-end gap-3">
+            <a href={WA_LINK} target="_blank" rel="noreferrer" aria-label="Falar no WhatsApp" className="group relative inline-flex items-center justify-center h-14 w-14 rounded-full bg-ink-300/95 backdrop-blur border border-white/15 text-neon-lime animate-pulse-glow">
+              <span className="absolute -top-1 -right-1 h-3 w-3 rounded-full bg-neon-lime" style={{ boxShadow:'0 0 24px rgba(132,204,22,0.45)' }}></span>
+              <Icon name="message-circle" className="h-6 w-6" />
+              <span className="absolute right-full mr-3 hidden sm:flex items-center whitespace-nowrap rounded-full bg-ink-300/95 border border-white/10 px-3 py-1.5 text-xs font-semibold text-white opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all">Falar no WhatsApp</span>
+            </a>
+            <button type="button" aria-label="Voltar ao topo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className={`inline-flex items-center justify-center h-11 w-11 rounded-full bg-white/5 backdrop-blur border border-white/10 text-zinc-200 hover:bg-white/10 hover:text-white transition ${showTop ? 'opacity-100 translate-y-0' : 'pointer-events-none opacity-0 translate-y-2'}`}>
+              <Icon name="arrow-up" className="h-4 w-4" />
+            </button>
+          </div>
+        );
+      };
+
+      const App = () => (
+        <div className="relative min-h-screen overflow-x-hidden">
+          <Navbar />
+          <main>
+            <Hero />
+            <Benefits />
+            <SingleServices />
+            <Services />
+            <CTA />
+            <Testimonials />
+            <ContactForm />
+          </main>
+          <Footer />
+          <FloatingButtons />
+        </div>
+      );
+
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      const scheduleLucide = () => requestAnimationFrame(() => { try { Lucide.createIcons(); } catch (e) {} });
+      root.render(<App />);
+      scheduleLucide();
+      new MutationObserver(() => scheduleLucide()).observe(document.getElementById('root'), { childList: true, subtree: true });
+    </script>
+  </body>
+</html>

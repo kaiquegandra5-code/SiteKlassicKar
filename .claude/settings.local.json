@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "PowerShell(npm *)",
+      "WebFetch(domain:lucide.dev)",
+      "WebSearch",
+      "WebFetch(domain:unpkg.com)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(curl -sI \"https://unpkg.com/lucide@0.469.0/dist/umd/lucide.js\")",
+      "Bash(curl -s \"https://unpkg.com/lucide@0.469.0/dist/umd/lucide.js\")",
+      "Bash(curl -sI \"https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js\")",
+      "Bash(curl -s \"https://cdn.tailwindcss.com?plugins=forms\")",
+      "Bash(curl -sL \"https://cdn.tailwindcss.com?plugins=forms\")",
+      "Bash(dir C:\\\\Users\\\\Kaiqu\\\\Downloads\\\\SiteKlassicKar *)",
+      "Read(//c/Program Files/**)",
+      "Read(//c/Program Files \\(x86\\)/**)",
+      "Read(//c/Users/Kaiqu/AppData/Roaming/**)",
+      "PowerShell(Start-Process \"C:\\\\Users\\\\Kaiqu\\\\Downloads\\\\SiteKlassicKar\\\\standalone.html\")",
+      "Read(//tmp/ai-inspired-creation/**)",
+      "Bash(git -C /tmp/ai-inspired-creation remote -v)",
+      "Bash(git -C /tmp/ai-inspired-creation branch -a)",
+      "Bash(cp -r /c/Users/Kaiqu/Downloads/SiteKlassicKar/src/components /tmp/ai-inspired-creation/src/)",
+      "Bash(cp -r /c/Users/Kaiqu/Downloads/SiteKlassicKar/src/data /tmp/ai-inspired-creation/src/)",
+      "Bash(cp /c/Users/Kaiqu/Downloads/SiteKlassicKar/src/App.jsx /tmp/ai-inspired-creation/src/)",
+      "Bash(cp /c/Users/Kaiqu/Downloads/SiteKlassicKar/src/main.jsx /tmp/ai-inspired-creation/src/)",
+      "Bash(cp /c/Users/Kaiqu/Downloads/SiteKlassicKar/src/index.css /tmp/ai-inspired-creation/src/)",
+      "Bash(rm -rf /tmp/ai-inspired-creation/src/components /tmp/ai-inspired-creation/src/data /tmp/ai-inspired-creation/src/App.jsx /tmp/ai-inspired-creation/src/main.jsx /tmp/ai-inspired-creation/src/index.css /tmp/ai-inspired-creation/tailwind.config.js /tmp/ai-inspired-creation/postcss.config.js)",
+      "Bash(cp /c/Users/Kaiqu/Downloads/SiteKlassicKar/index.html /tmp/ai-inspired-creation/index.html)",
+      "Bash(git -C /tmp/ai-inspired-creation status)",
+      "Bash(git -C /tmp/ai-inspired-creation restore .)"
+    ]
+  }
+}
