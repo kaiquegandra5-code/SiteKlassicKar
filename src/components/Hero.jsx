@@ -11,8 +11,7 @@ export default function Hero() {
         <div
           className="absolute inset-0 bg-cover bg-center opacity-50 md:opacity-70"
           style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1920&q=80')",
+            backgroundImage: "url('/images/background2.png')",
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-ink via-ink/70 to-ink" />
@@ -37,9 +36,9 @@ export default function Hero() {
           </div>
 
           <h1 className="mt-6 font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight animate-fade-up">
-            <span className="text-white">Todo carro novo</span>{' '}
+            <span className="text-white">Todo carro novo,</span>{' '}
             <span className="text-white">um dia vira</span>{' '}
-            <span className="text-gradient">Klassic.</span>
+            <span className="text-gradient">Clássico.</span>
           </h1>
 
           <p className="mt-6 mx-auto max-w-2xl text-base sm:text-lg text-zinc-300 animate-fade-up">
