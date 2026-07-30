@@ -1,4 +1,11 @@
-{
+
+  {
+  "env": {
+    "ANTHROPIC_BASE_URL": "https://openrouter.ai/api",
+    "ANTHROPIC_AUTH_TOKEN": "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",
+    "ANTHROPIC_API_KEY": "",
+    "ANTHROPIC_MODEL": "openrouter/free"
+  },
   "permissions": {
     "allow": [
       "Bash(npm install *)",
@@ -33,3 +40,4 @@
     ]
   }
 }
+  
