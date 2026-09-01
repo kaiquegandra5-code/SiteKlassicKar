@@ -36,7 +36,7 @@ export default function Testimonials() {
             Avaliações do Google
           </span>
           <h2 className="mt-5 font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white">
-            <span className="text-emerald-400">5,0</span> de 5 estrelas
+            <span className="text-lime-400">5,0</span> de 5 estrelas
           </h2>
 
           <div className="mt-6 inline-flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.02] px-4 py-3">
@@ -61,7 +61,7 @@ export default function Testimonials() {
               key={t.name}
               className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 sm:p-8 transition-all duration-300 hover:border-white/20 hover:bg-white/[0.04] relative"
             >
-              <Quote className="absolute -top-3 -left-3 h-8 w-8 text-emerald-500/40" aria-hidden />
+              <Quote className="absolute -top-3 -left-3 h-8 w-8 text-lime-500/40" aria-hidden />
 
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-1">
@@ -87,7 +87,7 @@ export default function Testimonials() {
                     <div className="text-xs text-zinc-400">{t.time}</div>
                   </div>
                 </div>
-                <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-emerald-400">
+                <span className="inline-flex items-center gap-1 rounded-full bg-lime-500/10 border border-lime-500/20 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-lime-400">
                   <BadgeCheck className="h-3 w-3" /> Verificada
                 </span>
               </div>

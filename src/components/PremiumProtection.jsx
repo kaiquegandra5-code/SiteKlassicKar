@@ -15,7 +15,7 @@ export default function PremiumProtection() {
             Proteção e Estilo
           </span>
           <h2 className="mt-5 font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white">
-            Proteção <span className="text-emerald-400">Premium</span> para o seu carro
+            Proteção <span className="text-lime-500">Premium</span> para o seu carro
           </h2>
           <p className="mt-4 text-zinc-400">
             Estilo, proteção e valorização. Films, envelopamentos e PPF executados
@@ -46,7 +46,7 @@ export default function PremiumProtection() {
                 <ul className="mt-4 space-y-1.5 flex-1">
                   {s.features.map((f) => (
                     <li key={f} className="flex items-start gap-2 text-xs text-zinc-300">
-                      <Check className="h-3.5 w-3.5 text-emerald-400 flex-shrink-0 mt-0.5" />
+                      <Check className="h-3.5 w-3.5 text-lime-500 flex-shrink-0 mt-0.5" />
                       <span>{f}</span>
                     </li>
                   ))}
@@ -60,7 +60,7 @@ export default function PremiumProtection() {
                   <div className="flex items-end justify-between mb-4">
                     <div>
                       <div className="text-[11px] uppercase tracking-wider text-zinc-500">A partir de</div>
-                      <div className="font-display text-2xl font-bold text-emerald-400">{s.priceFrom}</div>
+                      <div className="font-display text-2xl font-bold text-lime-500">{s.priceFrom}</div>
                     </div>
                   </div>
                   <a

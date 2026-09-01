@@ -19,7 +19,7 @@ export default function FloatingButtons() {
         target="_blank"
         rel="noreferrer"
         aria-label="Falar no WhatsApp"
-        className="group relative inline-flex items-center justify-center h-14 w-14 rounded-full bg-emerald-500 text-black transition hover:bg-emerald-400 hover:scale-105"
+        className="group relative inline-flex items-center justify-center h-14 w-14 rounded-full bg-lime-500 text-black transition hover:bg-lime-600 hover:scale-105"
       >
         <MessageCircle className="h-6 w-6" />
         <span

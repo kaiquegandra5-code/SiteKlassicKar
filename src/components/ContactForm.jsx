@@ -84,7 +84,7 @@ export default function ContactForm() {
               Assine um pacote
             </span>
             <h2 className="mt-5 font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white">
-              Comece hoje seu <span className="text-emerald-400">plano mensal</span>
+              Comece hoje seu <span className="text-lime-500">plano mensal</span>
             </h2>
             <p className="mt-4 text-zinc-400 max-w-lg">
               Preencha os dados abaixo e nossa equipe confirmará sua assinatura
@@ -98,7 +98,7 @@ export default function ContactForm() {
                 { Icon: Car, t: 'Leva e traz disponível na região' },
               ].map(({ Icon, t }) => (
                 <li key={t} className="flex items-center gap-3 text-sm text-zinc-200">
-                  <span className="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/[0.03] text-emerald-400">
+                  <span className="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/[0.03] text-lime-500">
                     <Icon className="h-5 w-5" />
                   </span>
                   {t}
@@ -112,7 +112,7 @@ export default function ContactForm() {
                 href={whatsappLink(WHATSAPP_MSG_PACKAGE)}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-2 inline-flex items-center gap-2 text-lg font-semibold text-emerald-400 hover:text-emerald-300 transition"
+                className="mt-2 inline-flex items-center gap-2 text-lg font-semibold text-lime-500 hover:text-lime-300 transition"
               >
                 <MessageCircle className="h-5 w-5" />
                 {WHATSAPP_DISPLAY}
@@ -129,7 +129,7 @@ export default function ContactForm() {
           >
             {status === 'sent' ? (
               <div className="text-center py-8">
-                <span className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-emerald-500">
+                <span className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-lime-500">
                   <CheckCircle2 className="h-7 w-7 text-black" />
                 </span>
                 <h3 className="mt-5 font-display text-2xl font-bold text-white">Pedido enviado!</h3>
@@ -141,7 +141,7 @@ export default function ContactForm() {
                   href={formWhatsappLink}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-emerald-500 px-6 py-3 text-sm font-semibold text-black transition hover:bg-emerald-400"
+                  className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-lime-500 px-6 py-3 text-sm font-semibold text-black transition hover:bg-lime-600"
                 >
                   <MessageCircle className="h-4 w-4" />
                   Falar no WhatsApp agora
@@ -157,7 +157,7 @@ export default function ContactForm() {
             ) : (
               <div className="relative">
                 <div className="mb-5 flex items-center gap-2 text-xs text-zinc-400">
-                  <Shield className="h-3.5 w-3.5 text-emerald-400" />
+                  <Shield className="h-3.5 w-3.5 text-lime-500" />
                   Seus dados estão seguros. Não enviamos spam.
                 </div>
 
@@ -174,7 +174,7 @@ export default function ContactForm() {
                       placeholder="Seu nome"
                       value={form.name}
                       onChange={handleChange}
-                      className="w-full rounded-xl bg-[#0a0a0c] border border-white/10 px-4 py-3 text-sm text-zinc-100 placeholder-zinc-500 outline-none transition focus:border-emerald-500/50 focus:ring-2 focus:ring-emerald-500/20"
+                      className="w-full rounded-xl bg-[#0a0a0c] border border-white/10 px-4 py-3 text-sm text-zinc-100 placeholder-zinc-500 outline-none transition focus:border-lime-500/50 focus:ring-2 focus:ring-lime-500/20"
                     />
                     {errors.name && <p className="mt-1 text-xs text-red-400">{errors.name}</p>}
                   </div>
@@ -192,7 +192,7 @@ export default function ContactForm() {
                       placeholder="(11) 99378-4778"
                       value={form.phone}
                       onChange={handleChange}
-                      className="w-full rounded-xl bg-[#0a0a0c] border border-white/10 px-4 py-3 text-sm text-zinc-100 placeholder-zinc-500 outline-none transition focus:border-emerald-500/50 focus:ring-2 focus:ring-emerald-500/20"
+                      className="w-full rounded-xl bg-[#0a0a0c] border border-white/10 px-4 py-3 text-sm text-zinc-100 placeholder-zinc-500 outline-none transition focus:border-lime-500/50 focus:ring-2 focus:ring-lime-500/20"
                     />
                     {errors.phone && <p className="mt-1 text-xs text-red-400">{errors.phone}</p>}
                   </div>
@@ -208,7 +208,7 @@ export default function ContactForm() {
                       placeholder="Ex.: HB20 2022, Onix Plus, Jeep Compass..."
                       value={form.carModel}
                       onChange={handleChange}
-                      className="w-full rounded-xl bg-[#0a0a0c] border border-white/10 px-4 py-3 text-sm text-zinc-100 placeholder-zinc-500 outline-none transition focus:border-emerald-500/50 focus:ring-2 focus:ring-emerald-500/20"
+                      className="w-full rounded-xl bg-[#0a0a0c] border border-white/10 px-4 py-3 text-sm text-zinc-100 placeholder-zinc-500 outline-none transition focus:border-lime-500/50 focus:ring-2 focus:ring-lime-500/20"
                     />
                     {errors.carModel && <p className="mt-1 text-xs text-red-400">{errors.carModel}</p>}
                   </div>
@@ -222,7 +222,7 @@ export default function ContactForm() {
                       name="service"
                       value={form.service}
                       onChange={handleChange}
-                      className="w-full rounded-xl bg-[#0a0a0c] border border-white/10 px-4 py-3 text-sm text-zinc-100 outline-none transition focus:border-emerald-500/50 focus:ring-2 focus:ring-emerald-500/20"
+                      className="w-full rounded-xl bg-[#0a0a0c] border border-white/10 px-4 py-3 text-sm text-zinc-100 outline-none transition focus:border-lime-500/50 focus:ring-2 focus:ring-lime-500/20"
                     >
                       <optgroup label="Pacotes Mensais (assinatura)">
                         {SERVICES.map((s) => (
@@ -258,7 +258,7 @@ export default function ContactForm() {
                         name="size"
                         value={form.size}
                         onChange={handleChange}
-                        className="w-full rounded-xl bg-[#0a0a0c] border border-white/10 px-4 py-3 text-sm text-zinc-100 outline-none transition focus:border-emerald-500/50 focus:ring-2 focus:ring-emerald-500/20"
+                        className="w-full rounded-xl bg-[#0a0a0c] border border-white/10 px-4 py-3 text-sm text-zinc-100 outline-none transition focus:border-lime-500/50 focus:ring-2 focus:ring-lime-500/20"
                       >
                         <option value="P" className="bg-[#0a0a0c]">P — Pequeno (HB20, Onix, Mobi)</option>
                         <option value="M" className="bg-[#0a0a0c]">M — Médio (Cruze, Corolla, Compass)</option>
@@ -272,7 +272,7 @@ export default function ContactForm() {
                       </label>
                       <div className="w-full rounded-xl bg-[#0a0a0c] border border-white/10 px-4 py-3 flex items-center justify-between cursor-not-allowed opacity-80">
                         <span className="text-zinc-400">Pagamento único</span>
-                        <span className="rounded-full bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 text-[11px] font-bold text-emerald-400">Sem fidelidade</span>
+                        <span className="rounded-full bg-lime-500/10 border border-lime-500/20 px-2 py-0.5 text-[11px] font-bold text-lime-500">Sem fidelidade</span>
                       </div>
                     </div>
                   )}
@@ -283,7 +283,7 @@ export default function ContactForm() {
                       <div className="text-xs uppercase tracking-wider text-zinc-400">
                         {isPackage ? 'Valor mensal estimado' : 'Valor do serviço'}
                       </div>
-                      <div className="font-display text-2xl font-bold text-emerald-400">{selectedPrice}</div>
+                      <div className="font-display text-2xl font-bold text-lime-500">{selectedPrice}</div>
                     </div>
                     <div className="text-right">
                       <div className="text-[11px] text-zinc-400">{selectedService?.title}</div>
@@ -296,7 +296,7 @@ export default function ContactForm() {
                 <button
                   type="submit"
                   disabled={status === 'loading'}
-                  className="mt-6 w-full inline-flex items-center justify-center gap-2 rounded-full bg-emerald-500 px-6 py-3.5 text-base font-semibold text-black transition hover:bg-emerald-400 disabled:opacity-70"
+                  className="mt-6 w-full inline-flex items-center justify-center gap-2 rounded-full bg-lime-500 px-6 py-3.5 text-base font-semibold text-black transition hover:bg-lime-600 disabled:opacity-70"
                 >
                   {status === 'loading' ? (
                     <>

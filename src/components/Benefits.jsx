@@ -44,7 +44,7 @@ export default function Benefits() {
             Por que escolher a Klassic Kar
           </span>
           <h2 className="mt-5 font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white">
-            Nossos <span className="text-emerald-500">diferenciais</span>
+            Nossos <span className="text-lime-500">diferenciais</span>
           </h2>
           <p className="mt-4 text-zinc-400">
             Não somos mais um. Somos a referência em estética automotiva premium
@@ -60,7 +60,7 @@ export default function Benefits() {
                 key={b.title}
                 className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 sm:p-7 transition-all duration-300 hover:border-white/20 hover:bg-white/[0.04]"
               >
-                <span className="grid h-12 w-12 place-items-center rounded-xl border border-white/10 bg-white/5 text-emerald-400">
+                <span className="grid h-12 w-12 place-items-center rounded-xl border border-white/10 bg-white/5 text-lime-500">
                   <Icon className="h-6 w-6" />
                 </span>
                 <h3 className="mt-5 text-lg sm:text-xl font-semibold text-white">{b.title}</h3>
@@ -75,7 +75,7 @@ export default function Benefits() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {STATS.map((s) => (
               <div key={s.l}>
-                <div className="font-display text-2xl md:text-3xl font-bold text-emerald-400">{s.v}</div>
+                <div className="font-display text-2xl md:text-3xl font-bold text-lime-500">{s.v}</div>
                 <div className="mt-1 text-xs uppercase tracking-wider text-zinc-400">{s.l}</div>
               </div>
             ))}

@@ -25,14 +25,14 @@ export default function Hero() {
         <div className="mx-auto max-w-4xl text-center">
           {/* Badge superior: estilo corporativo, sem neon */}
           <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] backdrop-blur px-3.5 py-1.5 text-xs font-medium tracking-wide text-zinc-300">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden />
+            <span className="h-1.5 w-1.5 rounded-full bg-lime-500" aria-hidden />
             São Paulo - SP • Estética Automotiva Especializada
           </div>
 
           {/* H1: destaque em cor sólida, sem gradiente */}
           <h1 className="mt-7 font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight">
             <span className="text-white">Seu carro. Seu estilo.</span>{' '}
-            <span className="text-emerald-500">Nossa paixão.</span>
+            <span className="text-lime-500">Nossa paixão.</span>
           </h1>
 
           {/* Subtítulo: copy direta e humanizada */}
@@ -48,7 +48,7 @@ export default function Hero() {
               href={whatsappLink(WHATSAPP_MSG_GENERAL)}
               target="_blank"
               rel="noreferrer"
-              className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-emerald-500 px-7 py-3.5 text-base font-semibold text-black transition-all duration-200 hover:bg-emerald-400 active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0c]"
+              className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-lime-500 px-7 py-3.5 text-base font-semibold text-black transition-all duration-200 hover:bg-lime-400 active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-lime-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0c]"
             >
               <MessageCircle className="h-5 w-5" />
               Agendar pelo WhatsApp

@@ -22,7 +22,7 @@ export default function Logo({ size = 'md', className = '' }) {
 
       <span className={`font-display font-bold tracking-tight ${d.text}`}>
         <span className="text-white">Klassic</span>
-        <span className="text-emerald-400"> Kar</span>
+        <span className="text-lime-500"> Kar</span>
       </span>
     </a>
   )

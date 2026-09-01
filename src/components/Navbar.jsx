@@ -53,7 +53,7 @@ export default function Navbar() {
             href={whatsappLink(WHATSAPP_MSG_GENERAL)}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-black transition hover:bg-emerald-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0c]"
+            className="inline-flex items-center gap-2 rounded-full bg-lime-500 px-5 py-2.5 text-sm font-semibold text-black transition hover:bg-lime-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-lime-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0c]"
           >
             <MessageCircle className="h-4 w-4" />
             Agendar Agora
@@ -97,7 +97,7 @@ export default function Navbar() {
             target="_blank"
             rel="noreferrer"
             onClick={() => setOpen(false)}
-            className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-full bg-emerald-500 px-5 py-3 text-sm font-semibold text-black transition hover:bg-emerald-400"
+            className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-full bg-lime-500 px-5 py-3 text-sm font-semibold text-black transition hover:bg-lime-600"
           >
             <MessageCircle className="h-4 w-4" />
             Agendar Agora
