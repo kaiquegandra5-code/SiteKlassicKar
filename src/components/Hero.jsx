@@ -29,10 +29,10 @@ export default function Hero() {
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          {/* Eyebrow com gatilho de autoridade + escassez */}
+          {/* Eyebrow com gatilho de autoridade */}
           <div className="inline-flex items-center gap-2 rounded-full border border-neon-lime/30 bg-neon-lime/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-neon-lime backdrop-blur animate-fade-up">
             <Sparkles className="h-3.5 w-3.5" />
-            Agenda aberta | Apenas 6 vagas esta semana
+            Estética automotiva premium
           </div>
 
           <h1 className="mt-6 font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight animate-fade-up">
