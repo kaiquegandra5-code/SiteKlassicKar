@@ -1,13 +1,11 @@
-import { Instagram, Facebook, Youtube, MapPin, Mail, Phone, ArrowUpRight } from 'lucide-react'
+import { Instagram, MapPin, Phone, ArrowUpRight } from 'lucide-react'
 import Logo from './Logo'
 import {
-  SOCIAL_LINKS,
   ADDRESS,
-  EMAIL,
   WHATSAPP_DISPLAY,
 } from '../data/contact'
 
-const ICONS = { instagram: Instagram}
+const INSTAGRAM = { label: 'Instagram', href: 'https://instagram.com/klassickar.estetica' }
 
 const NAV = [
   {
@@ -53,22 +51,16 @@ export default function Footer() {
               técnica e higienização interna. Excelência em cada detalhe.
             </p>
             <div className="mt-5 flex items-center gap-2">
-              {SOCIAL_LINKS.map((s) => {
-                const Icon = ICONS[s.icon] ?? Instagram
-                return (
-                  <a
-                    key={s.label}
-                    href={s.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={s.label}
-                    className="grid h-9 w-9 place-items-center rounded-full border border-white/10 bg-white/5
-                               text-zinc-300 transition hover:text-white hover:border-neon-purple/50 hover:shadow-glow-purple"
-                  >
-                    <Icon className="h-4 w-4" />
-                  </a>
-                )
-              })}
+              <a
+                href={INSTAGRAM.href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={INSTAGRAM.label}
+                className="grid h-9 w-9 place-items-center rounded-full border border-white/10 bg-white/5
+                           text-zinc-300 transition hover:text-white hover:border-neon-purple/50 hover:shadow-glow-purple"
+              >
+                <Instagram className="h-4 w-4" />
+              </a>
             </div>
           </div>
 
@@ -96,11 +88,10 @@ export default function Footer() {
         </div>
 
         {/* Contact strip */}
-        <div className="mt-12 grid gap-4 sm:grid-cols-3">
+        <div className="mt-12 grid gap-4 sm:grid-cols-2">
           {[
             { icon: MapPin, t: ADDRESS },
             { icon: Phone,  t: WHATSAPP_DISPLAY },
-            { icon: Mail,   t: EMAIL },
           ].map((c) => {
             const Icon = c.icon
             return (
