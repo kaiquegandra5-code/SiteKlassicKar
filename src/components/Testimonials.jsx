@@ -50,12 +50,12 @@ export default function Testimonials() {
               ))}
             </div>
             <span className="text-sm font-semibold text-white">5,0</span>
-            <span className="text-xs text-zinc-400">· 5 avaliações no Google</span>
+            <span className="text-xs text-zinc-400">| 5 avaliações no Google</span>
             {GOOGLE_LOGO}
           </div>
 
           <p className="mt-4 text-zinc-400 text-sm">
-            Klassic Kar Estética Automotiva · R. Mário Linhares, 561 - Jardim Inga, São Paulo - SP
+            Klassic Kar Estética Automotiva | R. Mário Linhares, 561 - Jardim Inga, São Paulo | SP
           </p>
         </div>
 

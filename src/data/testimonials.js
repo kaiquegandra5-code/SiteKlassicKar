@@ -6,7 +6,7 @@ export const TESTIMONIALS = [
     time: 'há 1 mês',
     source: 'Google',
     text:
-      'Serviço diferenciado! Meu carro ficou brilhando por mais de 1 semana após a lavagem. Atendimento excelente e resultado impecável. Super recomendo! ✨🚗',
+      'Serviço diferenciado! Meu carro ficou brilhando por mais de 1 semana após a lavagem. Atendimento excelente e resultado impecável. Super recomendo!',
   },
   {
     name: 'Kefanis Gandra',

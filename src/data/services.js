@@ -130,7 +130,6 @@ export const SERVICES = [
   {
     id: 'celta',
     icon: Sparkles,
-    emoji: '🚗',
     title: 'Pacote Celta',
     description: 'Ideal para manutenção básica do seu carro.',
     features: ['2 Lavagens Klássicas no mês'],
@@ -145,7 +144,6 @@ export const SERVICES = [
   {
     id: 'golf',
     icon: Zap,
-    emoji: '⚡',
     title: 'Pacote Golf',
     description: 'Mais frequência pro seu carro sempre limpo.',
     features: [
@@ -163,7 +161,6 @@ export const SERVICES = [
   {
     id: 'impala',
     icon: Flame,
-    emoji: '🔥',
     title: 'Pacote Impala',
     description: 'Estética + cuidado completo. O mais escolhido.',
     features: [
@@ -184,7 +181,6 @@ export const SERVICES = [
   {
     id: 'ram',
     icon: ShieldCheck,
-    emoji: '🐏',
     title: 'Pacote Ram',
     description: 'Proteção e valorização do veículo.',
     features: [
@@ -207,7 +203,6 @@ export const SERVICES = [
   {
     id: 'bmw',
     icon: Crown,
-    emoji: '💎',
     title: 'Pacote BMW',
     description: 'Transformação completa + manutenção mensal. Premium.',
     features: [

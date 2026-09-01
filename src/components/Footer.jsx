@@ -123,7 +123,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Klassic Kar — Estética Automotiva Premium. Todos os direitos reservados.
           </p>
           <p className="text-xs text-zinc-500">
-            CNPJ 00.000.000/0001-00 · Desenvolvido com <span className="text-gradient font-semibold">♥</span>
+            CNPJ 00.000.000/0001-00 | Todos os direitos reservados
           </p>
         </div>
       </div>

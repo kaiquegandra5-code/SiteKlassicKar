@@ -10,6 +10,7 @@ import {
   Droplets,
   MessageCircle,
   Shield,
+  Zap,
 } from 'lucide-react'
 import { SERVICES, SINGLE_SERVICES } from '../data/services'
 import {
@@ -91,21 +92,21 @@ export default function ContactForm() {
 
             <ul className="mt-8 space-y-4">
               {[
-                { icon: '⚡', t: 'Ativação em até 24 horas' },
-                { icon: '🛡️', t: 'Sem fidelidade — cancele quando quiser' },
-                { icon: '🚗', t: 'Leva e traz disponível na região' },
-              ].map((it) => (
+                { Icon: Zap, t: 'Ativação em até 24 horas' },
+                { Icon: Shield, t: 'Sem fidelidade | cancele quando quiser' },
+                { Icon: Car, t: 'Leva e traz disponível na região' },
+              ].map(({ Icon, t }) => (
                 <li
-                  key={it.t}
+                  key={t}
                   className="flex items-center gap-3 text-sm text-zinc-200"
                 >
                   <span
-                    className="grid h-10 w-10 place-items-center rounded-xl border border-white/10 text-neon-lime text-lg"
+                    className="grid h-10 w-10 place-items-center rounded-xl border border-white/10 text-neon-lime"
                     style={{ background: 'linear-gradient(135deg, rgba(168,85,247,0.18) 0%, rgba(132,204,22,0.12) 100%)' }}
                   >
-                    {it.icon}
+                    <Icon className="h-5 w-5" />
                   </span>
-                  {it.t}
+                  {t}
                 </li>
               ))}
             </ul>
@@ -123,7 +124,7 @@ export default function ContactForm() {
                 <MessageCircle className="h-5 w-5" />
                 {WHATSAPP_DISPLAY}
               </a>
-              <p className="mt-1 text-xs text-zinc-500">Seg–Sáb · 08h às 19h</p>
+              <p className="mt-1 text-xs text-zinc-500">Seg a Sáb | 08h às 19h</p>
             </div>
           </div>
 
@@ -238,17 +239,17 @@ export default function ContactForm() {
                       onChange={handleChange}
                       className="field-input"
                     >
-                      <optgroup label="📦 Pacotes Mensais (assinatura)">
+                      <optgroup label="Pacotes Mensais (assinatura)">
                         {SERVICES.map((s) => (
                           <option key={s.id} value={s.id} className="bg-ink-200">
-                            {s.emoji} {s.title} — a partir de {s.sizes[0].price}
+                            {s.title} | a partir de {s.sizes[0].price}
                           </option>
                         ))}
                       </optgroup>
-                      <optgroup label="💧 Serviços">
+                      <optgroup label="Serviços avulsos">
                         {SINGLE_SERVICES.map((s) => (
                           <option key={s.id} value={s.id} className="bg-ink-200">
-                            {s.title} — a partir de {s.priceFrom}
+                            {s.title} | a partir de {s.priceFrom}
                           </option>
                         ))}
                       </optgroup>
@@ -296,9 +297,7 @@ export default function ContactForm() {
                     </div>
                     <div className="text-right">
                       <div className="text-[11px] text-zinc-400">
-                        {isPackage
-                          ? `${selectedService?.emoji} ${selectedService?.title}`
-                          : selectedService?.title}
+                        {selectedService?.title}
                       </div>
                       <div className="text-[11px] text-zinc-400">
                         {isPackage ? `Porte ${form.size}` : 'Serviço avulso'}

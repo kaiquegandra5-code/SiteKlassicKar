@@ -37,16 +37,13 @@ export default function Services() {
 
                 {/* Header: ícone + badge */}
                 <div className="relative flex items-start justify-between gap-3">
-                  <div className="flex items-center gap-3">
-                    <span
-                      className={`grid h-12 w-12 place-items-center rounded-xl bg-white/5 border border-white/10 transition-all ${
-                        isHighlight ? 'text-neon-lime shadow-glow-mix' : 'text-neon-purple group-hover:text-neon-lime'
-                      }`}
-                    >
-                      <Icon className="h-6 w-6" />
-                    </span>
-                    <div className="text-2xl">{s.emoji}</div>
-                  </div>
+                  <span
+                    className={`grid h-12 w-12 place-items-center rounded-xl bg-white/5 border border-white/10 transition-all ${
+                      isHighlight ? 'text-neon-lime shadow-glow-mix' : 'text-neon-purple group-hover:text-neon-lime'
+                    }`}
+                  >
+                    <Icon className="h-6 w-6" />
+                  </span>
                   <span className={isHighlight ? 'badge-lime' : 'badge-purple'}>
                     {s.badge}
                   </span>
@@ -94,7 +91,7 @@ export default function Services() {
                     ))}
                   </div>
                   <div className="mt-1.5 text-[10px] text-center text-zinc-500">
-                    P: Pequeno · M: Médio · G: Grande
+                    P: Pequeno | M: Médio | G: Grande
                   </div>
                 </div>
 

@@ -32,7 +32,7 @@ export default function Hero() {
           {/* Eyebrow com gatilho de autoridade + escassez */}
           <div className="inline-flex items-center gap-2 rounded-full border border-neon-lime/30 bg-neon-lime/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-neon-lime backdrop-blur animate-fade-up">
             <Sparkles className="h-3.5 w-3.5" />
-            Agenda aberta · Apenas 6 vagas esta semana
+            Agenda aberta | Apenas 6 vagas esta semana
           </div>
 
           <h1 className="mt-6 font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight animate-fade-up">
@@ -82,7 +82,7 @@ export default function Hero() {
                 ))}
               </div>
               <span>
-                <strong className="text-white">4.9/5</strong> · +1.200 clientes satisfeitos
+                <strong className="text-white">4.9/5</strong> | +1.200 clientes satisfeitos
               </span>
             </div>
           </div>
