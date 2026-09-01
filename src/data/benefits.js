@@ -1,29 +1,29 @@
 import {
-  Award,
+  Sun,
+  ShieldCheck,
   Sparkles,
-  Truck,
-  UserCheck,
+  Car,
 } from 'lucide-react'
 
 export const BENEFITS = [
   {
-    icon: Award,
-    title: 'Produtos Importados',
-    desc: 'Trabalhamos exclusivamente com Gyeon, Koch Chemie e CarPro — referência mundial em detailing automotivo.',
+    icon: Sun,
+    title: 'Proteção UV e Térmica',
+    desc: 'Materiais premium que bloqueiam raios UV, reduzem calor e protegem o interior do seu veículo contra danos.',
   },
   {
-    icon: UserCheck,
-    title: 'Profissionais Certificados',
-    desc: 'Equipe treinada e certificada pelas principais instituições do setor. Seu carro está com especialistas.',
+    icon: ShieldCheck,
+    title: 'Acabamento Impecável',
+    desc: 'Aplicação profissional com atenção a cada detalhe. Seu carro saindo como novo, todos os vezes.',
   },
   {
     icon: Sparkles,
-    title: 'Atendimento Personalizado',
+    title: 'Atendimento 100% Personalizado',
     desc: 'Diagnóstico gratuito, orçamento sob medida e cronograma claro do início ao fim do serviço.',
   },
   {
-    icon: Truck,
+    icon: Car,
     title: 'Leva e Traz',
-    desc: 'Buscamos e entregamos seu carro em casa, no trabalho ou onde você estiver. Sem você perder tempo.',
+    desc: 'Buscamos e entregamos seu carro onde você estiver. Sem complicação, sem perda de tempo.',
   },
 ]

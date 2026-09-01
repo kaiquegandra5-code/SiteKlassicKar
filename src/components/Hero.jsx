@@ -36,14 +36,14 @@ export default function Hero() {
           </div>
 
           <h1 className="mt-6 font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight animate-fade-up">
-            <span className="text-white">Todo carro novo,</span>{' '}
-            <span className="text-white">um dia vira</span>{' '}
-            <span className="text-gradient">clássico.</span>
+            <span className="text-white">Seu carro.</span>{' '}
+            <span className="text-white">Seu estilo.</span>{' '}
+            <span className="text-gradient">Nossa paixão.</span>
           </h1>
 
           <p className="mt-6 mx-auto max-w-2xl text-base sm:text-lg text-zinc-300 animate-fade-up">
-            Detalhamento profissional, vitrificação cerâmica e lavagem técnica
-            executados por <strong className="text-white">especialistas certificados</strong>.
+            Detalhamento profissional, vitrificação cerâmica, películas premium
+            e lavagem técnica executados por <strong className="text-white">especialistas certificados</strong>.
             Produtos premium internacionais, leva-e-traz e garantia documentada.
           </p>
 

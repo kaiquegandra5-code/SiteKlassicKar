@@ -13,6 +13,7 @@ import {
   Zap,
 } from 'lucide-react'
 import { SERVICES, SINGLE_SERVICES } from '../data/services'
+import { PROTECTION_SERVICES } from '../data/protection'
 import {
   WHATSAPP_DISPLAY,
   WHATSAPP_NUMBER,
@@ -246,8 +247,15 @@ export default function ContactForm() {
                           </option>
                         ))}
                       </optgroup>
-                      <optgroup label="Serviços avulsos">
+                      <optgroup label="Lavagens avulsas">
                         {SINGLE_SERVICES.map((s) => (
+                          <option key={s.id} value={s.id} className="bg-ink-200">
+                            {s.title} | a partir de {s.priceFrom}
+                          </option>
+                        ))}
+                      </optgroup>
+                      <optgroup label="Proteção Premium">
+                        {PROTECTION_SERVICES.map((s) => (
                           <option key={s.id} value={s.id} className="bg-ink-200">
                             {s.title} | a partir de {s.priceFrom}
                           </option>

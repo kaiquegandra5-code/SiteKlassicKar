@@ -1,4 +1,4 @@
-import { ArrowRight, BadgeCheck, Check, Crown } from 'lucide-react'
+import { ArrowRight, BadgeCheck, Check, Crown, Star } from 'lucide-react'
 import { SERVICES } from '../data/services'
 
 export default function Services() {
@@ -8,10 +8,11 @@ export default function Services() {
         <div className="mx-auto max-w-2xl text-center">
           <span className="section-eyebrow">
             <BadgeCheck className="h-3.5 w-3.5" />
-            Pacotes Mensais
+            Planos Mensais
           </span>
           <h2 className="section-title mt-4">
-            Escolha o pacote <span className="text-gradient">ideal para o seu carro</span>
+            Lave mais, <span className="text-gradient">pague menos</span> e mantenha
+            seu carro sempre impecável
           </h2>
           <p className="mt-4 text-zinc-400">
             Planos mensais com tudo incluso. Escolha o tamanho do seu veículo
@@ -19,7 +20,7 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {SERVICES.map((s) => {
             const Icon = s.icon
             const isHighlight = s.highlight
@@ -45,19 +46,23 @@ export default function Services() {
                     <Icon className="h-6 w-6" />
                   </span>
                   <span className={isHighlight ? 'badge-lime' : 'badge-purple'}>
-                    {s.badge}
+                    {isHighlight ? (
+                      <>
+                        <Star className="mr-1 inline h-3 w-3" />
+                        {s.badge}
+                      </>
+                    ) : (
+                      s.badge
+                    )}
                   </span>
                 </div>
 
                 {/* Title + description */}
-                <h3 className="mt-5 text-xl font-bold text-white flex items-center gap-2">
-                  {s.title}
-                  {isHighlight && <Crown className="h-4 w-4 text-neon-lime" />}
-                </h3>
+                <h3 className="mt-5 text-xl font-bold text-white">{s.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-zinc-400">{s.description}</p>
 
                 {/* Features */}
-                <ul className="mt-4 space-y-1.5">
+                <ul className="mt-4 space-y-1.5 flex-1">
                   {s.features.map((f) => (
                     <li key={f} className="flex items-start gap-2 text-xs text-zinc-300">
                       <Check className="h-3.5 w-3.5 text-neon-lime flex-shrink-0 mt-0.5" />
@@ -84,7 +89,11 @@ export default function Services() {
                         <div className="text-[10px] font-bold uppercase tracking-wider text-zinc-400">
                           {size.label}
                         </div>
-                        <div className={`font-display text-sm sm:text-base font-bold mt-0.5 ${idx === 1 ? 'text-gradient' : 'text-neon-lime'}`}>
+                        <div
+                          className={`font-display text-sm sm:text-base font-bold mt-0.5 ${
+                            idx === 1 ? 'text-gradient' : 'text-neon-lime'
+                          }`}
+                        >
                           {size.price}
                         </div>
                       </div>
@@ -104,7 +113,7 @@ export default function Services() {
                       : 'border border-white/10 bg-gradient-brand-soft text-white hover:border-neon-purple/50 hover:shadow-glow-purple'
                   }`}
                 >
-                  Quero este pacote
+                  Quero este plano
                   <ArrowRight className="h-3.5 w-3.5" />
                 </a>
               </article>
@@ -113,7 +122,7 @@ export default function Services() {
         </div>
 
         <p className="mt-8 text-center text-xs text-zinc-500">
-          * Valores por mês. Contratos com fidelidade opcional. Desconto progressivo em pacotes anuais.
+          * Valores por mês. Contratos com fidelidade opcional. Desconto progressivo em planos anuais.
         </p>
       </div>
     </section>

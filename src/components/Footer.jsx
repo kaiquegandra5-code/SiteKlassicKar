@@ -11,12 +11,21 @@ const ICONS = { instagram: Instagram}
 
 const NAV = [
   {
-    title: 'Serviços',
+    title: 'Lavagens',
     links: [
-      { label: 'Lavagem Detalhada', href: '#servicos' },
-      { label: 'Correção de Pintura', href: '#servicos' },
-      { label: 'Vitrificação Cerâmica', href: '#servicos' },
-      { label: 'Higienização Interna', href: '#servicos' },
+      { label: 'Lavagem Klássica',     href: '#servicos-avulsos' },
+      { label: 'Lavagem Suprema',      href: '#servicos-avulsos' },
+      { label: 'Lavagem Premium',      href: '#servicos-avulsos' },
+      { label: 'Pacotes Mensais',      href: '#servicos'         },
+    ],
+  },
+  {
+    title: 'Proteção',
+    links: [
+      { label: 'Insulfilm',            href: '#' },
+      { label: 'Envelopamento',        href: '#' },
+      { label: 'PPF',                  href: '#' },
+      { label: 'Vitrificação',         href: '#' },
     ],
   },
   {
@@ -26,15 +35,6 @@ const NAV = [
       { label: 'Avaliações',     href: '#avaliacoes'   },
       { label: 'Agendar',        href: '#contato'      },
       { label: 'Sobre nós',      href: '#'             },
-    ],
-  },
-  {
-    title: 'Suporte',
-    links: [
-      { label: 'Política de Privacidade', href: '#' },
-      { label: 'Garantia',                href: '#' },
-      { label: 'FAQ',                     href: '#' },
-      { label: 'Trabalhe conosco',        href: '#' },
     ],
   },
 ]
