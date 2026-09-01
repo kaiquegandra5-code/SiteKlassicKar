@@ -11,8 +11,7 @@ export default function Logo({ size = 'md', className = '' }) {
     <a href="#top" className={`group inline-flex items-center gap-2.5 ${className}`}>
       <span
         className={`relative overflow-hidden grid place-items-center rounded-xl ${d.box}
-                    ring-1 ring-white/10 shadow-glow-purple transition-all duration-300
-                    group-hover:shadow-glow-mix`}
+                    ring-1 ring-white/10 transition-all duration-300`}
       >
         <img
           src="/images/logo.jpeg"
@@ -23,7 +22,7 @@ export default function Logo({ size = 'md', className = '' }) {
 
       <span className={`font-display font-bold tracking-tight ${d.text}`}>
         <span className="text-white">Klassic</span>
-        <span className="text-gradient"> Kar</span>
+        <span className="text-emerald-400"> Kar</span>
       </span>
     </a>
   )

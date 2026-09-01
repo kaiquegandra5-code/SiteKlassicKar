@@ -1,5 +1,34 @@
-import { BadgeCheck } from 'lucide-react'
-import { BENEFITS } from '../data/benefits'
+import { BadgeCheck, ShieldCheck, Clock, Award, Sparkles, Truck } from 'lucide-react'
+
+const BENEFITS = [
+  {
+    icon: ShieldCheck,
+    title: 'Garantia de 12 meses',
+    desc: 'Em vitrificação e PPF. Documentação oficial e cobertura em rede credenciada.',
+  },
+  {
+    icon: Award,
+    title: 'Equipe certificada',
+    desc: 'Profissionais treinados com certificação ICR/IDR e produtos premium internacionais.',
+  },
+  {
+    icon: Truck,
+    title: 'Leva e traz grátis',
+    desc: 'Buscamos e entregamos seu carro na região. Você não precisa se preocupar com nada.',
+  },
+  {
+    icon: Clock,
+    title: 'Atendimento ágil',
+    desc: 'Confirmação em até 30 minutos pelo WhatsApp. Respeitamos seu tempo.',
+  },
+]
+
+const STATS = [
+  { v: '4.9/5',   l: 'Avaliação Google' },
+  { v: '+1.200',  l: 'Carros atendidos' },
+  { v: '98%',     l: 'Recomendariam'    },
+  { v: '12 meses', l: 'Garantia média'  },
+]
 
 export default function Benefits() {
   return (
@@ -10,12 +39,12 @@ export default function Benefits() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="section-eyebrow">
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-zinc-300">
             <BadgeCheck className="h-3.5 w-3.5" />
             Por que escolher a Klassic Kar
           </span>
-          <h2 className="section-title mt-4">
-            Os <span className="text-gradient">4 pilares</span> que fazem a diferença
+          <h2 className="mt-5 font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white">
+            Nossos <span className="text-emerald-500">diferenciais</span>
           </h2>
           <p className="mt-4 text-zinc-400">
             Não somos mais um. Somos a referência em estética automotiva premium
@@ -29,14 +58,10 @@ export default function Benefits() {
             return (
               <div
                 key={b.title}
-                className="glass-card glass-card-hover relative p-6 sm:p-7 animate-fade-up"
+                className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 sm:p-7 transition-all duration-300 hover:border-white/20 hover:bg-white/[0.04]"
               >
-                <span
-                  className="grid h-14 w-14 place-items-center rounded-2xl border border-white/10
-                             text-neon-purple shadow-glow-purple"
-                  style={{ background: 'linear-gradient(135deg, rgba(168,85,247,0.18) 0%, rgba(132,204,22,0.12) 100%)' }}
-                >
-                  <Icon className="h-7 w-7" />
+                <span className="grid h-12 w-12 place-items-center rounded-xl border border-white/10 bg-white/5 text-emerald-400">
+                  <Icon className="h-6 w-6" />
                 </span>
                 <h3 className="mt-5 text-lg sm:text-xl font-semibold text-white">{b.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-zinc-400">{b.desc}</p>
@@ -46,16 +71,11 @@ export default function Benefits() {
         </div>
 
         {/* Stats bar */}
-        <div className="mt-14 glass-card p-6 sm:p-8">
+        <div className="mt-14 rounded-2xl border border-white/10 bg-white/[0.02] p-6 sm:p-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            {[
-              { v: '4.9/5',   l: 'Avaliação Google' },
-              { v: '+1.200',  l: 'Carros atendidos' },
-              { v: '98%',     l: 'Recomendariam'    },
-              { v: '12 meses', l: 'Garantia média'  },
-            ].map((s) => (
+            {STATS.map((s) => (
               <div key={s.l}>
-                <div className="font-display text-2xl md:text-3xl font-bold text-gradient">{s.v}</div>
+                <div className="font-display text-2xl md:text-3xl font-bold text-emerald-400">{s.v}</div>
                 <div className="mt-1 text-xs uppercase tracking-wider text-zinc-400">{s.l}</div>
               </div>
             ))}

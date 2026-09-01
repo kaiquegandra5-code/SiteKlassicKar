@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Menu, X, CalendarCheck } from 'lucide-react'
+import { Menu, X, MessageCircle } from 'lucide-react'
 import Logo from './Logo'
 import { whatsappLink, WHATSAPP_MSG_GENERAL } from '../data/contact'
 
@@ -33,7 +33,7 @@ export default function Navbar() {
       id="top"
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'backdrop-blur-xl bg-ink/85 border-b border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.35)]'
+          ? 'backdrop-blur-xl bg-[#0a0a0c]/85 border-b border-white/10'
           : 'bg-transparent'
       }`}
     >
@@ -53,9 +53,9 @@ export default function Navbar() {
             href={whatsappLink(WHATSAPP_MSG_GENERAL)}
             target="_blank"
             rel="noreferrer"
-            className="btn-primary text-sm"
+            className="inline-flex items-center gap-2 rounded-full bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-black transition hover:bg-emerald-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0c]"
           >
-            <CalendarCheck className="h-4 w-4" />
+            <MessageCircle className="h-4 w-4" />
             Agendar Agora
           </a>
         </div>
@@ -65,8 +65,7 @@ export default function Navbar() {
           aria-label={open ? 'Fechar menu' : 'Abrir menu'}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-xl
-                     border border-white/10 bg-white/5 text-zinc-100 hover:bg-white/10 transition"
+          className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-zinc-100 hover:bg-white/10 transition"
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
@@ -78,7 +77,7 @@ export default function Navbar() {
           open ? 'max-h-[420px] opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="mx-4 mb-4 rounded-2xl border border-white/10 bg-ink/90 backdrop-blur-xl p-4 shadow-card">
+        <div className="mx-4 mb-4 rounded-2xl border border-white/10 bg-[#0a0a0c]/95 backdrop-blur-xl p-4">
           <ul className="flex flex-col gap-1">
             {LINKS.map((l) => (
               <li key={l.href}>
@@ -94,11 +93,13 @@ export default function Navbar() {
             ))}
           </ul>
           <a
-            href="#contato"
+            href={whatsappLink(WHATSAPP_MSG_GENERAL)}
+            target="_blank"
+            rel="noreferrer"
             onClick={() => setOpen(false)}
-            className="btn-primary mt-3 w-full text-sm"
+            className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-full bg-emerald-500 px-5 py-3 text-sm font-semibold text-black transition hover:bg-emerald-400"
           >
-            <CalendarCheck className="h-4 w-4" />
+            <MessageCircle className="h-4 w-4" />
             Agendar Agora
           </a>
         </div>

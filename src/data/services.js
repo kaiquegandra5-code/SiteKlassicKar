@@ -31,7 +31,6 @@ export const SINGLE_SERVICES = [
       { label: 'Grande',  price: 'R$ 100' },
     ],
     badge: 'Lavagem Avulsa',
-    gradient: 'from-neon-lime/20 to-neon-purple/20',
     highlight: false,
   },
   {
@@ -52,7 +51,6 @@ export const SINGLE_SERVICES = [
       { label: 'Grande',  price: 'R$ 200' },
     ],
     badge: 'Lavagem Avulsa',
-    gradient: 'from-neon-purple/15 to-neon-lime/15',
     highlight: false,
   },
   {
@@ -76,7 +74,6 @@ export const SINGLE_SERVICES = [
       { label: 'Grande',  price: 'R$ 320' },
     ],
     badge: 'A Mais Escolhida',
-    gradient: 'from-neon-purple/20 to-neon-lime/25',
     highlight: true,
   },
 ]
@@ -98,7 +95,6 @@ export const SERVICES = [
       { label: 'G', price: 'R$ 190' },
     ],
     badge: 'Economia',
-    gradient: 'from-neon-purple/30 to-neon-lime/10',
     highlight: false,
   },
   {
@@ -116,7 +112,6 @@ export const SERVICES = [
       { label: 'G', price: 'R$ 219' },
     ],
     badge: 'Mais frequência',
-    gradient: 'from-neon-lime/20 to-neon-purple/20',
     highlight: false,
   },
   {
@@ -138,7 +133,6 @@ export const SERVICES = [
       { label: 'G', price: 'R$ 449' },
     ],
     badge: 'O Mais Escolhido',
-    gradient: 'from-neon-purple/15 to-neon-lime/15',
     highlight: true,
   },
   {
@@ -162,7 +156,6 @@ export const SERVICES = [
       { label: 'G', price: 'R$ 1.397' },
     ],
     badge: 'Premium',
-    gradient: 'from-neon-purple/20 to-neon-lime/20',
     highlight: false,
   },
 ]

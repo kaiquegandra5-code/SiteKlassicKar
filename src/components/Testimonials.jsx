@@ -31,22 +31,18 @@ export default function Testimonials() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="section-eyebrow">
-            <Star className="h-3.5 w-3.5 fill-current" />
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-zinc-300">
+            <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
             Avaliações do Google
           </span>
-          <h2 className="section-title mt-4">
-            <span className="text-gradient">5,0</span> de 5 estrelas
+          <h2 className="mt-5 font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white">
+            <span className="text-emerald-400">5,0</span> de 5 estrelas
           </h2>
 
-          {/* Card de destaque com a nota do Google */}
-          <div className="mt-6 inline-flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur">
+          <div className="mt-6 inline-flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.02] px-4 py-3">
             <div className="flex items-center gap-0.5">
               {Array.from({ length: 5 }).map((_, i) => (
-                <Star
-                  key={i}
-                  className="h-4 w-4 text-neon-lime fill-neon-lime drop-shadow-[0_0_6px_rgba(132,204,22,0.5)]"
-                />
+                <Star key={i} className="h-4 w-4 text-amber-400 fill-amber-400" />
               ))}
             </div>
             <span className="text-sm font-semibold text-white">5,0</span>
@@ -63,18 +59,14 @@ export default function Testimonials() {
           {TESTIMONIALS.map((t) => (
             <article
               key={t.name}
-              className="glass-card glass-card-hover relative p-6 sm:p-8 animate-fade-up"
+              className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 sm:p-8 transition-all duration-300 hover:border-white/20 hover:bg-white/[0.04] relative"
             >
-              <Quote className="absolute -top-3 -left-3 h-8 w-8 text-neon-purple/40" aria-hidden />
+              <Quote className="absolute -top-3 -left-3 h-8 w-8 text-emerald-500/40" aria-hidden />
 
-              {/* Stars + badge Google */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-1">
                   {Array.from({ length: t.rating }).map((_, i) => (
-                    <Star
-                      key={i}
-                      className="h-4 w-4 text-neon-lime fill-neon-lime drop-shadow-[0_0_6px_rgba(132,204,22,0.5)]"
-                    />
+                    <Star key={i} className="h-4 w-4 text-amber-400 fill-amber-400" />
                   ))}
                 </div>
                 <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-zinc-300">
@@ -83,11 +75,11 @@ export default function Testimonials() {
                 </span>
               </div>
 
-              <p className="mt-4 text-zinc-200 leading-relaxed">“{t.text}”</p>
+              <p className="mt-4 text-zinc-200 leading-relaxed">"{t.text}"</p>
 
               <div className="mt-6 flex items-center justify-between pt-5 border-t border-white/5">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-neon-purple to-neon-violet text-sm font-bold text-white">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-sm font-bold text-zinc-200">
                     {t.initials}
                   </div>
                   <div>
@@ -95,9 +87,8 @@ export default function Testimonials() {
                     <div className="text-xs text-zinc-400">{t.time}</div>
                   </div>
                 </div>
-                <span className="badge-purple">
-                  <BadgeCheck className="mr-1 inline h-3 w-3" />
-                  Verificada
+                <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-emerald-400">
+                  <BadgeCheck className="h-3 w-3" /> Verificada
                 </span>
               </div>
             </article>

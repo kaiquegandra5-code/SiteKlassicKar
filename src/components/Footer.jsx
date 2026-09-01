@@ -39,8 +39,7 @@ const NAV = [
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-white/10 bg-ink-300">
-      <div className="absolute inset-x-0 top-0 h-px neon-divider" />
+    <footer className="relative border-t border-white/10 bg-[#0a0a0c]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           {/* Brand */}
@@ -57,7 +56,7 @@ export default function Footer() {
                 rel="noreferrer"
                 aria-label={INSTAGRAM.label}
                 className="grid h-9 w-9 place-items-center rounded-full border border-white/10 bg-white/5
-                           text-zinc-300 transition hover:text-white hover:border-neon-purple/50 hover:shadow-glow-purple"
+                           text-zinc-300 transition hover:text-white hover:bg-white/10 hover:border-white/20"
               >
                 <Instagram className="h-4 w-4" />
               </a>
@@ -67,7 +66,7 @@ export default function Footer() {
           {/* Nav groups */}
           {NAV.map((g) => (
             <div key={g.title}>
-              <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-neon-lime">
+              <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-zinc-300">
                 {g.title}
               </h4>
               <ul className="mt-4 space-y-2.5">
@@ -75,7 +74,7 @@ export default function Footer() {
                   <li key={l.label}>
                     <a
                       href={l.href}
-                      className="group inline-flex items-center gap-1 text-sm text-zinc-300 hover:text-white transition"
+                      className="group inline-flex items-center gap-1 text-sm text-zinc-400 hover:text-white transition"
                     >
                       {l.label}
                       <ArrowUpRight className="h-3.5 w-3.5 opacity-0 -translate-x-1 transition-all group-hover:opacity-100 group-hover:translate-x-0" />
@@ -95,11 +94,11 @@ export default function Footer() {
           ].map((c) => {
             const Icon = c.icon
             return (
-              <div key={c.t} className="glass-card flex items-center gap-3 p-4">
-                <span
-                  className="grid h-9 w-9 place-items-center rounded-xl border border-white/10 text-neon-purple"
-                  style={{ background: 'linear-gradient(135deg, rgba(168,85,247,0.18) 0%, rgba(132,204,22,0.12) 100%)' }}
-                >
+              <div
+                key={c.t}
+                className="rounded-2xl border border-white/10 bg-white/[0.02] flex items-center gap-3 p-4"
+              >
+                <span className="grid h-9 w-9 place-items-center rounded-xl border border-white/10 bg-white/5 text-zinc-300">
                   <Icon className="h-4 w-4" />
                 </span>
                 <span className="text-sm text-zinc-200">{c.t}</span>

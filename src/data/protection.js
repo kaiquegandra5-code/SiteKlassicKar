@@ -18,7 +18,6 @@ export const PROTECTION_SERVICES = [
     note: 'Opções: Película comum | Nano carbono | Nano cerâmica | Window blue',
     priceFrom: 'R$ 500',
     badge: 'Proteção Térmica',
-    gradient: 'from-neon-lime/20 to-neon-purple/15',
   },
   {
     id: 'envelopamento',
@@ -36,7 +35,6 @@ export const PROTECTION_SERVICES = [
     note: 'Aplicações parciais ou completo sob orçamento',
     priceFrom: 'R$ 200',
     badge: 'Envelopamento',
-    gradient: 'from-neon-purple/15 to-neon-lime/20',
   },
   {
     id: 'ppf',
@@ -54,6 +52,5 @@ export const PROTECTION_SERVICES = [
     note: 'Película de poliuretano auto-regenerativa',
     priceFrom: 'R$ 250',
     badge: 'Proteção Invisível',
-    gradient: 'from-neon-lime/15 to-neon-purple/25',
   },
 ]

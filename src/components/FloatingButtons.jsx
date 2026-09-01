@@ -19,15 +19,12 @@ export default function FloatingButtons() {
         target="_blank"
         rel="noreferrer"
         aria-label="Falar no WhatsApp"
-        className="group relative inline-flex items-center justify-center h-14 w-14 rounded-full
-                   bg-ink-300/95 backdrop-blur border border-white/15 text-neon-lime
-                   shadow-glow-mix hover:scale-105 transition animate-pulse-glow"
+        className="group relative inline-flex items-center justify-center h-14 w-14 rounded-full bg-emerald-500 text-black transition hover:bg-emerald-400 hover:scale-105"
       >
-        <span aria-hidden className="absolute -top-1 -right-1 h-3 w-3 rounded-full bg-neon-lime shadow-glow-lime" />
         <MessageCircle className="h-6 w-6" />
         <span
           className="absolute right-full mr-3 hidden sm:flex items-center whitespace-nowrap
-                     rounded-full bg-ink-300/95 border border-white/10 px-3 py-1.5 text-xs font-semibold text-white
+                     rounded-full bg-[#0a0a0c]/95 border border-white/10 px-3 py-1.5 text-xs font-semibold text-white
                      opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all"
         >
           Falar no WhatsApp
