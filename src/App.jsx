@@ -4,7 +4,6 @@ import Benefits          from './components/Benefits'
 import SingleServices    from './components/SingleServices'
 import PremiumProtection from './components/PremiumProtection'
 import Services          from './components/Services'
-import CTA               from './components/CTA'
 import Testimonials      from './components/Testimonials'
 import ContactForm       from './components/ContactForm'
 import Footer            from './components/Footer'
@@ -31,13 +30,10 @@ export default function App() {
         {/* 5. Planos Mensais — assinaturas recorrentes, maior valor */}
         <Services />
 
-        {/* 6. CTA intermediário com oferta por tempo limitado */}
-        <CTA />
-
-        {/* 7. Prova social — depoimentos que quebram objeção de preço */}
+        {/* 6. Prova social — depoimentos que quebram objeção de preço */}
         <Testimonials />
 
-        {/* 8. CTA final / formulário de conversão */}
+        {/* 7. CTA final / formulário de conversão */}
         <ContactForm />
       </main>
 
